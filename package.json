@@ -12,8 +12,8 @@
     "build": "webpack --mode production"
   },
   "pre-commit": [
-    "eslint",
-    "stylelint"
+    "stylelint",
+    "eslint"
   ],
   "prettier": {
     "singleQuote": true,
@@ -37,6 +37,7 @@
     "node-sass": "^7.0.3",
     "postcss-loader": "^7.0.1",
     "postcss-scss": "^4.0.5",
+    "pre-commit": "^1.2.2",
     "precommit": "^1.2.2",
     "prettier": "^2.7.1",
     "raw-loader": "^4.0.2",
