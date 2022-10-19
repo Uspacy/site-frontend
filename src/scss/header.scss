@@ -1,0 +1,88 @@
+@import './var.scss';
+
+@font-face {
+	font-family: e-Ukraine;
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/e-Ukraine/e-Ukraine-Regular.ttf');
+}
+
+.header {
+	font-family: e-Ukraine;
+	width: 100%;
+	padding-top: 37px;
+	background-image: url('../img/main_background.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 860px;
+
+	// @media screen and (max-width: $small) {
+	// 	min-height: 1020px;
+	// }
+	.headerContent {
+		height: 100%;
+		min-height: 860px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	.logoText {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+	.logo {
+		padding-right: 66px;
+	}
+
+	.createText {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 11px;
+		line-height: 120%;
+		color: $color-white;
+	}
+
+	.createText::after {
+		content: '';
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		background-image: url('../img/flag.png');
+		position: relative;
+		top: -8px;
+		right: -4px;
+	}
+
+	.effectiveText {
+		color: $color-white;
+
+		h2 {
+			font-weight: 700;
+			font-size: 45px;
+			line-height: 110%;
+		}
+
+		.smallerText {
+			margin-top: 15px;
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 130%;
+			max-width: 334px;
+		}
+
+		.btnNotify {
+			@include notifyMe;
+		}
+	}
+
+	.headerLastText {
+		max-width: 369px;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 165%;
+	}
+}
