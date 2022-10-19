@@ -70,17 +70,23 @@
 
 			<div>
 				<div class="firstKnow container">
-					<div>
-						<h2>Хочете першим дізнатися про запуск Uspacy?</h2>
+					<div class="leftBlock">
+						<div class="h2">Хочете першим дізнатися про запуск Uspacy?</div>
 						<p>
 							Просто залиште свою адресу електронної пошти! Ми будемо використовувати її лише для інформування вас про новини Uspacy та
 							дату його запуску.
 						</p>
 					</div>
-					<div>
-						<form>
-							<input />
-							<button type="submit">Повідомте мене про запуск</button>
+					<div class="rightBlock">
+						<form class="form" action="">
+							<div class="checkBox">
+								<input type="checkbox" id="consent" />
+								<label for="consent" class="label">
+									<span>Даю згоду на обробку персональних даних згідно політики конфіденційності.</span>
+								</label>
+							</div>
+							<button type="submit" class="btnSubmit" disabled>Повідомте мене про запуск</button>
+							<div><input type="text" name="email" placeholder="ваш email" class="email" /></div>
 						</form>
 					</div>
 				</div>

@@ -147,7 +147,91 @@
 
 	.firstKnow {
 		margin-top: 140px;
-		@include flex;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+
+		.leftBlock {
+			width: 47%;
+
+			.h2 {
+				font-weight: 700;
+				font-size: 24px;
+				line-height: 150%;
+			}
+		}
+
+		.rightBlock {
+			width: 43%;
+
+			.form {
+				@include flex;
+				flex-direction: column-reverse;
+
+				.email,
+				.btnSubmit {
+					width: 310px;
+					height: 64px;
+					border-radius: 100px;
+					border: none;
+					outline: none;
+				}
+
+				.email {
+					background: $color-grey25;
+					text-align: center;
+					font-size: 12px;
+					color: $color-black;
+				}
+
+				.btnSubmit {
+					background: $bg-gradient-cian;
+					color: $color-white;
+					margin-top: 12px;
+					font-weight: 500;
+					cursor: pointer;
+				}
+			}
+
+			.checkBox {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+				margin-top: 17px;
+			}
+
+			#consent {
+				opacity: 0;
+			}
+
+			.checkBox label::before {
+				content: '\2713';
+				font-size: 16px;
+				text-align: center;
+				color: white;
+				display: inline-block;
+				width: 36px;
+				height: 20px;
+				margin-right: 11px;
+				border: 2px solid $color-grey;
+				border-radius: 4px;
+			}
+
+			#consent:checked ~ label::before {
+				color: $color-black;
+			}
+
+			.label {
+				display: flex;
+				justify-content: space-between;
+
+				span {
+					display: inline-block;
+					font-size: 12px;
+					line-height: 165%;
+				}
+			}
+		}
 	}
 
 	.developBusnies {
@@ -168,6 +252,8 @@
 		}
 
 		.partnerProgramm {
+			cursor: pointer;
+
 			.link {
 				display: inline-block;
 				max-width: 185px;
