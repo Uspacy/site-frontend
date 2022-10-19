@@ -1,14 +1,7 @@
 @import './var.scss';
 
-@font-face {
-	font-family: e-Ukraine;
-	font-style: normal;
-	font-weight: 400;
-	src: url('../fonts/e-Ukraine/e-Ukraine-Regular.ttf');
-}
-
 .header {
-	font-family: e-Ukraine;
+	box-sizing: content-box;
 	width: 100%;
 	padding-top: 37px;
 	background-image: url('../img/main_background.png');
@@ -16,9 +9,6 @@
 	background-repeat: no-repeat;
 	min-height: 860px;
 
-	// @media screen and (max-width: $small) {
-	// 	min-height: 1020px;
-	// }
 	.headerContent {
 		height: 100%;
 		min-height: 860px;
@@ -81,8 +71,6 @@
 
 	.headerLastText {
 		max-width: 369px;
-		font-weight: 400;
-		font-size: 14px;
-		line-height: 165%;
+		@include fw400;
 	}
 }

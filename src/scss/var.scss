@@ -14,8 +14,11 @@ $color-yellow: #ffd00d;
 
 $gradient-blue: linear-gradient(145.98deg, #13d9f8 17.41%, #4238e5 82.58%);
 $gradient-purple: linear-gradient(145.98deg, #2a18f1 17.41%, #e31da9 82.58%);
+$bg-gradient-blue: linear-gradient(92.84deg, #4841d0 7.14%, #39adf2 93.94%);
+$bg-gradient-purple: linear-gradient(92.84deg, #ae5beb 7.14%, #4942d1 93.94%);
 
 $small: 768px;
+$media: 1024px;
 
 @mixin notifyMe {
 	display: flex;
@@ -36,4 +39,16 @@ $small: 768px;
 		padding: 17px 40px;
 		text-decoration: none;
 	}
+}
+
+@mixin fw400 {
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 165%;
+}
+
+@mixin flex {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
