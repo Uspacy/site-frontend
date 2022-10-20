@@ -7,22 +7,22 @@ function main() {
 
 	function openModal(e) {
 		e.preventDefault();
-		modalElem.classList.add('active');
-		overlay.classList.add('active');
+		modalElem?.classList.add('active');
+		overlay?.classList.add('active');
 	}
 	function closeModal(e) {
 		e.preventDefault();
-		modalElem.classList.remove('active');
-		overlay.classList.remove('active');
+		modalElem?.classList.remove('active');
+		overlay?.classList.remove('active');
 	}
 
-	modalButtons.forEach(function (item) {
-		item.addEventListener('click', openModal);
+	modalButtons?.forEach(function (item) {
+		item?.addEventListener('click', openModal);
 	});
 
-	closeButton.addEventListener('click', closeModal);
-	overlay.addEventListener('click', closeModal);
-	backButton.addEventListener('click', closeModal);
+	closeButton?.addEventListener('click', closeModal);
+	overlay?.addEventListener('click', closeModal);
+	backButton?.addEventListener('click', closeModal);
 }
 
 document.addEventListener('DOMContentLoaded', main);
