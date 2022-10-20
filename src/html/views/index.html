@@ -1,6 +1,14 @@
-<% var data = { title: "Index" }; %> <%= _.template(require('../includes/header.html').default)(data) %>
-<%=_.template(require('../includes/main.html').default)() %> <%= _.template(require('../includes/footer.html').default)() %>
-<script src="js/bundle.js"></script>
-
-</body>
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<link rel="stylesheet" href="css/style.bundle.css" />
+		<title>Uspacy></title>
+	</head>
+	<body>
+		<%= _.template(require('../includes/header.html').default)(data) %> <%=_.template(require('../includes/main.html').default)() %> <%=
+		_.template(require('../includes/footer.html').default)() %>
+		<script src="js/bundle.js"></script>
+	</body>
 </html>

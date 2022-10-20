@@ -16,7 +16,7 @@
 					Вже у першій версії Uspacy наприкінці цього року ми представимо комплекс онлайн-інструментів, які створють єданий робочий простір
 					вашої компанії
 				</div>
-				<div class="btnNotify"><a href="notify.html">Повідомте мене про запуск</a></div>
+				<div class="btnNotify"><a href="" class="js-open-modal">Повідомте мене про запуск</a></div>
 			</div>
 			<nav class="menu container">
 				<ul class="menuList">
@@ -109,5 +109,47 @@
 				</div>
 			</div>
 		</div>
+
+		<!-- ---------------------------------- -->
+		<div class="modal js-modal" data-modal="notify">
+			<div class="overlay js-overlay"></div>
+			<div class="modalWindow">
+				<div class="close js-modal-close">
+					<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path
+							fill-rule="evenodd"
+							clip-rule="evenodd"
+							d="M13.8182 0.727516C14.2198 0.325854 14.871 0.325854 15.2727 0.727515C15.6744 1.12918 15.6744 1.7804 15.2727 2.18206L9.45457 8.0002L15.2728 13.8184C15.6744 14.2201 15.6744 14.8713 15.2728 15.273C14.8711 15.6746 14.2199 15.6746 13.8182 15.273L8.00003 9.45474L2.18182 15.273C1.78015 15.6746 1.12893 15.6746 0.727271 15.273C0.32561 14.8713 0.32561 14.2201 0.727271 13.8184L6.54548 8.0002L0.727345 2.18206C0.325684 1.7804 0.325684 1.12918 0.727345 0.727515C1.12901 0.325854 1.78023 0.325854 2.18189 0.727516L8.00003 6.54565L13.8182 0.727516Z"
+							fill="white"
+						/>
+					</svg>
+				</div>
+				<div>
+					<div class="modal_firstKnow">
+						<div class="leftBlock">
+							<div class="h2">Хочете першим дізнатися про запуск Uspacy?</div>
+							<p>
+								Просто залиште свою адресу електронної пошти! Ми будемо використовувати її лише для інформування вас про новини Uspacy
+								та дату його запуску.
+							</p>
+						</div>
+						<div class="rightBlock">
+							<form class="modal_form" action="">
+								<div class="checkBox">
+									<label for="consent" class="label">
+										<input type="checkbox" id="modal_consent" />
+
+										<span>Даю згоду на обробку персональних даних згідно політики конфіденційності.</span>
+									</label>
+								</div>
+								<button type="submit" class="btnSubmit">Повідомте мене про запуск</button>
+								<div><input type="text" name="email" placeholder="ваш email" class="email" /></div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ------------------------------------- -->
 	</div>
 </main>

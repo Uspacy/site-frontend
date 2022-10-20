@@ -3,6 +3,8 @@
 @import './main.scss';
 @import './privacyPolicy.scss';
 @import './cookiesPolicy.scss';
+@import './404.scss';
+@import './modal.scss';
 @import './footer.scss';
 
 $font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -44,7 +46,6 @@ a {
 }
 
 .container {
-	height: 100%;
 	padding: 0 10px;
 	max-width: 836px;
 	margin: 0 auto;
