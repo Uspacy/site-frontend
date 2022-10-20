@@ -23,6 +23,17 @@ function main() {
 	closeButton?.addEventListener('click', closeModal);
 	overlay?.addEventListener('click', closeModal);
 	backButton?.addEventListener('click', closeModal);
+
+	document.body.addEventListener(
+		'keyup',
+		function (e) {
+			if (e.code == 'Escape') {
+				document.querySelector('.modal.active')?.classList.remove('active');
+				document.querySelector('.overlay')?.classList.remove('active');
+			}
+		},
+		false,
+	);
 }
 
 document.addEventListener('DOMContentLoaded', main);

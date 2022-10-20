@@ -62,7 +62,7 @@
 				.btnSubmit {
 					width: 310px;
 					height: 64px;
-					border-radius: 100px;
+					border-radius: 50px;
 					border: none;
 					outline: none;
 				}
@@ -71,12 +71,17 @@
 					background: $color-grey25;
 					text-align: center;
 					font-size: 12px;
-					color: $color-black;
+					color: $color-white;
+				}
+
+				.email::placeholder {
+					color: $color-white;
 				}
 
 				.btnSubmit {
-					background: $bg-gradient-cian;
+					background: inherit;
 					color: $color-white;
+					border: 2px solid $color-white;
 					margin-top: 12px;
 					font-weight: 500;
 					cursor: pointer;
