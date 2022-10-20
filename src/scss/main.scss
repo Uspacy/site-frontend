@@ -208,20 +208,16 @@
 
 			.checkBox label::before {
 				content: '\2713';
-				font-size: 16px;
+				font-size: 18px;
 				text-align: center;
 				color: white;
 				display: block;
-				width: 36px;
-				height: 20px;
+				width: 1.8em;
+				height: 1em;
 				margin-right: 11px;
 				border: 2px solid $color-grey;
 				border-radius: 4px;
-
-				@media (max-width: $small) {
-					width: 36px;
-					height: 16px;
-				}
+				line-height: 90%;
 			}
 
 			#consent:checked ~ label::before {
