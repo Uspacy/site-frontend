@@ -7,7 +7,11 @@
 	background-image: url('../img/main_background.png');
 	background-size: cover;
 	background-repeat: no-repeat;
+	background-position: center;
 	min-height: 860px;
+	@media (max-width: 648px) {
+		background-position: top;
+	}
 
 	.headerContent {
 		height: 100%;
@@ -45,6 +49,9 @@
 		position: relative;
 		top: -8px;
 		right: -4px;
+		@media (max-width: 490px) {
+			top: 0;
+		}
 	}
 
 	.effectiveText {

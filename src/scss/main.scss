@@ -166,6 +166,7 @@
 
 			.form {
 				@include flex;
+
 				flex-direction: column-reverse;
 
 				.email,
@@ -209,12 +210,17 @@
 				font-size: 16px;
 				text-align: center;
 				color: white;
-				display: inline-block;
-				width: 36px;
+				display: block;
+				width: 30px;
 				height: 20px;
 				margin-right: 11px;
 				border: 2px solid $color-grey;
 				border-radius: 4px;
+
+				@media (max-width: $small) {
+					width: 36px;
+					height: 16px;
+				}
 			}
 
 			#consent:checked ~ label::before {

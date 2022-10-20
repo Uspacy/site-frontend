@@ -1,6 +1,7 @@
 @import './var.scss';
 @import './header.scss';
 @import './main.scss';
+@import './privacyPolicy.scss';
 @import './footer.scss';
 
 $font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -43,7 +44,8 @@ a {
 
 .container {
 	height: 100%;
-	max-width: 816px;
+	padding: 0 10px;
+	max-width: 836px;
 	margin: 0 auto;
 }
 
