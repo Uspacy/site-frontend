@@ -3,6 +3,7 @@
 	margin: 0 auto;
 	padding-top: 40px;
 	line-height: 165%;
+	font-family: 'e-Ukraine';
 
 	.mainContent {
 		& ul {
@@ -36,6 +37,10 @@
 				color: $color-deep-grey;
 			}
 		}
+	}
+
+	.section {
+		margin-top: 36px;
 	}
 }
 

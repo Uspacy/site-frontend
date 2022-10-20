@@ -1,0 +1,158 @@
+.cookiesWrapper {
+	max-width: 820px;
+	margin: 0 auto;
+	padding-top: 40px;
+	line-height: 165%;
+	font-family: 'e-Ukraine';
+
+	.mainContent {
+		& ul {
+			padding-left: 14px;
+		}
+
+		& li {
+			color: $color-magenta;
+			list-style-image: url('../img/blueEllipse.png');
+
+			span {
+				color: $color-black;
+			}
+		}
+	}
+
+	.cookiesHeader {
+		@include flex;
+
+		margin-top: 92px;
+
+		h2 {
+			font-weight: 700;
+			font-size: 24px;
+			line-height: 150%;
+		}
+
+		div {
+			font-weight: 400;
+			font-size: 12px;
+			line-height: 165%;
+			color: $color-deep-grey;
+		}
+	}
+
+	.bold {
+		font-weight: 700;
+	}
+
+	h5 {
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 165%;
+		color: $color-magenta;
+	}
+
+	.section {
+		margin-top: 36px;
+	}
+
+	.indentation {
+		padding-left: 1em;
+	}
+
+	.mailLink {
+		text-decoration: underline;
+		color: $color-black;
+	}
+
+	.tableBlock {
+		max-width: 820px;
+		margin: 40px 0;
+
+		.titles {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			height: 45px;
+			font-weight: 700;
+			font-size: 14px;
+			line-height: 120%;
+			border-bottom: 2px solid $color-grey50;
+
+			@media (max-width: $small) {
+				display: none;
+			}
+		}
+
+		.row {
+			display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+			margin-top: 20px;
+
+			@media (max-width: $small) {
+				flex-direction: column;
+			}
+		}
+
+		.title {
+			font-weight: 700;
+			display: none;
+			margin-right: 10%;
+			@media (max-width: $small) {
+				display: inline;
+			}
+		}
+
+		.name {
+			width: 14%;
+		}
+
+		.provider {
+			width: 15%;
+		}
+
+		.purpose {
+			width: 50%;
+		}
+
+		.retantion {
+			width: 9%;
+			padding-right: 5px;
+		}
+		@media (max-width: $small) {
+			.name,
+			.provider,
+			.purpose,
+			.retantion {
+				width: 100%;
+				margin-bottom: 11px;
+				display: flex;
+				justify-content: flex-start;
+				align-items: flex-start;
+			}
+
+			.retantion {
+				margin-bottom: 32px;
+			}
+		}
+	}
+}
+
+.cookiesWrapper ~ footer {
+	.footerLinks div:last-child a {
+		text-decoration: none;
+
+		span {
+			color: $color-deep-grey;
+		}
+	}
+
+	.repiashky svg path,
+	.repiashky svg circle:last-child {
+		fill: $color-deep-grey;
+	}
+
+	.repiashky:hover svg path:first-child,
+	.repiashky:hover svg circle:last-child {
+		fill: $color-deep-grey;
+	}
+}
