@@ -19,7 +19,6 @@
 		background-color: $color-magenta;
 		border-radius: 16px;
 		padding: 54px 10px;
-
 		position: fixed;
 		top: 50%;
 		left: 50%;
@@ -91,7 +90,7 @@
 				margin-top: 17px;
 			}
 
-			#modal_consent {
+			#modalConsent {
 				opacity: 0;
 			}
 
@@ -109,7 +108,7 @@
 				line-height: 90%;
 			}
 
-			#modal_consent:checked ~ label::before {
+			#modalConsent:checked ~ label::before {
 				color: $color-black;
 			}
 
@@ -124,6 +123,16 @@
 				}
 			}
 		}
+	}
+
+	.backWrapper {
+		text-align: center;
+		margin-top: 47px;
+	}
+
+	.back {
+		color: $color-white;
+		text-decoration: underline;
 	}
 }
 
