@@ -291,6 +291,7 @@
 
 		.leftBlock {
 			width: 47%;
+
 			@media (max-width: $small) {
 				width: 100%;
 			}
@@ -304,6 +305,7 @@
 
 		.rightBlock {
 			width: 43%;
+
 			@media (max-width: $small) {
 				width: 100%;
 			}

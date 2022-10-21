@@ -76,8 +76,17 @@
 		justify-content: space-between;
 		align-items: flex-start;
 
+		@media (max-width: $small) {
+			flex-direction: column;
+			align-items: center;
+		}
+
 		.leftBlock {
 			width: 47%;
+
+			@media (max-width: $small) {
+				width: 100%;
+			}
 
 			.h2 {
 				font-weight: 700;
@@ -88,6 +97,10 @@
 
 		.rightBlock {
 			width: 43%;
+
+			@media (max-width: $small) {
+				width: 100%;
+			}
 
 			.form {
 				@include flex;
@@ -142,6 +155,13 @@
 				border: 2px solid $color-grey;
 				border-radius: 4px;
 				line-height: 90%;
+
+				@media (max-width: $small) {
+					width: 1em;
+				}
+				@media (max-width: $xsmall) {
+					width: 1.6em;
+				}
 			}
 
 			#consent:checked ~ label::before {
