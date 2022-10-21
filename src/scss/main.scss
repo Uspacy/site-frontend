@@ -118,7 +118,7 @@
 			border-radius: 0;
 			background: url('../img/uspacy_mobl_bg2.png') top no-repeat;
 
-			background-size: cover;
+			background-size: 100% 100%;
 		}
 
 		.text {
@@ -148,7 +148,7 @@
 		}
 
 		a {
-			max-width: 155px;
+			max-width: 150px;
 			height: 100%;
 			display: inline-block;
 			font-weight: 400;
@@ -159,6 +159,7 @@
 			height: 60px;
 			position: relative;
 			bottom: -2px;
+			transition: all 0.2s ease-in;
 		}
 		a:not(:last-child) {
 			margin-right: 15px;
@@ -180,10 +181,36 @@
 			}
 
 			a:not(.active) {
-				visibility: none;
+				visibility: hidden;
 				opacity: 0;
 				position: absolute;
 			}
+		}
+
+		.arrows {
+			visibility: hidden;
+			height: 50px;
+			position: absolute;
+			@include flex;
+			font-weight: 700;
+			font-size: 12px;
+			line-height: 150%;
+
+			@media (max-width: $small) {
+				visibility: visible;
+				position: static;
+			}
+
+			.leftArrow,
+			.rightArrow {
+				padding: 12px;
+				cursor: pointer;
+			}
+		}
+
+		.leftArrow {
+			display: inline-block;
+			transform: rotate(180deg);
 		}
 	}
 
@@ -226,7 +253,7 @@
 	}
 
 	.contentItem:not(.active) {
-		visibility: none;
+		visibility: hidden;
 		opacity: 0;
 		position: absolute;
 	}
@@ -386,7 +413,7 @@
 			justify-content: flex-end;
 			border-radius: 0;
 			background: url('../img/uspacy_mobl_bg_3.png') top no-repeat;
-			background-size: cover;
+			background-size: 100% 100%;
 		}
 
 		.text {

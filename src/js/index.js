@@ -41,13 +41,17 @@ function main() {
 	function clickMenuLink(event) {
 		event.preventDefault();
 		const activeLink = [...menuLinks].find((link) => link.classList.contains('active'));
+
 		activeLink?.classList.remove('active');
 		// eslint-disable-next-line no-invalid-this
 		const linkName = this.dataset.menu;
 		const menuContentItems = document.querySelectorAll('.js-menu-content');
-		menuContentItems?.forEach((elem) => {
-			if (elem.dataset.menu === linkName) elem.classList.add('active');
-			else elem.classList.contains('active') ? elem.classList.remove('active') : null;
+		menuContentItems?.forEach((elem, index) => {
+			if (elem.dataset?.menu === linkName) {
+				elem?.classList.add('active');
+
+				console.log('index:', index);
+			} else elem?.classList.contains('active') ? elem.classList.remove('active') : null;
 			// eslint-disable-next-line no-invalid-this
 			this.classList.add('active');
 		});
