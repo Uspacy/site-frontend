@@ -5,13 +5,9 @@
 	width: 100%;
 	padding-top: 37px;
 	background-image: url('../img/main_background.png');
-	background-size: cover;
 	background-repeat: no-repeat;
-	background-position: center;
+	background-size: cover;
 	min-height: 860px;
-	@media (max-width: 648px) {
-		background-position: top;
-	}
 
 	.headerContent {
 		height: 100%;
@@ -26,10 +22,18 @@
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
+		@media (max-width: $xsmall) {
+			flex-direction: column;
+			width: 100%;
+		}
 	}
 
 	.logo {
 		padding-right: 66px;
+		@media (max-width: $xsmall) {
+			padding-right: 0;
+			width: 100%;
+		}
 	}
 
 	.createText {
@@ -38,6 +42,11 @@
 		font-size: 11px;
 		line-height: 120%;
 		color: $color-white;
+		@media (max-width: $xsmall) {
+			text-align: right;
+			width: 100%;
+			margin-top: 24px;
+		}
 	}
 
 	.createText::after {
@@ -61,6 +70,9 @@
 			font-weight: 700;
 			font-size: 45px;
 			line-height: 110%;
+			@media (max-width: $small) {
+				font-size: 30px;
+			}
 		}
 
 		.smallerText {
@@ -69,6 +81,11 @@
 			font-size: 18px;
 			line-height: 130%;
 			max-width: 334px;
+			@media (max-width: $small) {
+				span {
+					color: $color-white;
+				}
+			}
 		}
 
 		.btnNotify {

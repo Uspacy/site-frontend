@@ -1,6 +1,7 @@
 .modal {
 	opacity: 0;
 	visibility: hidden;
+	transition: 0.4s all;
 
 	.overlay {
 		position: fixed;
@@ -10,9 +11,9 @@
 		height: 100%;
 		background-color: $color-overlay;
 		z-index: 20;
-		transition: 0.3s all;
 		opacity: 0;
 		visibility: hidden;
+		transition: 0.4s all;
 	}
 	.modalWindow {
 		max-width: 484px;

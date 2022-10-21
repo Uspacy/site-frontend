@@ -36,6 +36,25 @@ footer {
 	}
 }
 
+.footerLinks {
+	@media (max-width: $xsmall) {
+		position: relative;
+
+		div:first-child {
+			position: absolute;
+			width: 199px;
+			top: 45px;
+			left: -160px;
+		}
+	}
+
+	@media (max-width: 420px) {
+		div:first-child {
+			left: -120px;
+		}
+	}
+}
+
 .repiashky {
 	margin-left: 32px;
 
