@@ -45,6 +45,58 @@
 			top: -20px;
 		}
 	}
+	.infoBlockWrapper {
+		position: relative;
+		overflow-x: hidden;
+	}
+
+	.runStrBlock {
+		position: absolute;
+		top: 135px;
+		height: 90px;
+		width: 110%;
+		height: 33px;
+
+		transform: rotate(-1.3deg);
+		background: $color-white;
+
+		font-weight: 700;
+		font-size: 10px;
+		line-height: 150%;
+
+		@media (max-width: $small) {
+			transform: rotate(-4.53deg);
+			top: 60%;
+		}
+
+		p {
+			text-align: center;
+			color: $color-black;
+			text-transform: uppercase;
+			padding-top: 9px;
+			animation: strRun 15s infinite linear;
+			white-space: nowrap;
+		}
+		.blueCircle {
+			display: inline-block;
+			width: 5px;
+			height: 5px;
+			border-radius: 50%;
+			background-color: $color-magenta;
+			margin: 0 8px;
+			position: relative;
+			bottom: 2px;
+		}
+		@keyframes strRun {
+			0% {
+				transform: translate(0, 0);
+			}
+
+			100% {
+				transform: translate(-110%, 0);
+			}
+		}
+	}
 
 	.infoBlock {
 		max-width: 988px;
@@ -95,17 +147,9 @@
 			margin-top: 132px;
 		}
 
-		li {
-			list-style-type: none;
+		a {
 			max-width: 155px;
 			height: 100%;
-		}
-
-		li:not(:last-child) {
-			margin-right: 15px;
-		}
-
-		a {
 			display: inline-block;
 			font-weight: 400;
 			font-size: 14px;
@@ -114,9 +158,11 @@
 			text-decoration: none;
 			padding-bottom: 22px;
 		}
+		a:not(:last-child) {
+			margin-right: 15px;
+		}
 
-		// a:active,
-		li.active {
+		a.active {
 			position: relative;
 			bottom: -2px;
 			font-weight: 700;
@@ -134,6 +180,7 @@
 		justify-content: space-between;
 		align-items: flex-start;
 		font-weight: 500;
+		line-height: 165%;
 
 		@media (max-width: $small) {
 			flex-direction: column;
