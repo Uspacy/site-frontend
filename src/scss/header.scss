@@ -9,6 +9,11 @@
 	background-size: cover;
 	min-height: 860px;
 
+	@media (max-width: $small) {
+		background-image: url('../img/uspacy_mobl_bg1.png');
+		background-size: 100% 100%;
+	}
+
 	.headerContent {
 		height: 100%;
 		min-height: 860px;
@@ -71,6 +76,7 @@
 			font-size: 45px;
 			line-height: 110%;
 			@media (max-width: $small) {
+				padding-top: 350px;
 				font-size: 30px;
 			}
 		}
