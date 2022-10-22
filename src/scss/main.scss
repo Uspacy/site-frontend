@@ -206,6 +206,20 @@
 				padding: 12px;
 				cursor: pointer;
 			}
+
+			.leftArrow.js-disable,
+			.rightArrow.js-disable {
+				opacity: 0.4;
+			}
+
+			.indexDigit {
+				padding-right: 4px;
+			}
+
+			.totalCount {
+				opacity: 0.4;
+				padding-left: 4px;
+			}
 		}
 
 		.leftArrow {
@@ -243,6 +257,7 @@
 				margin-top: 12px;
 				width: 100%;
 				font-size: 11px;
+				padding-left: 12px;
 			}
 
 			div {

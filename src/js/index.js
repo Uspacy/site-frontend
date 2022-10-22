@@ -1,3 +1,5 @@
+const MAX_INDEX = 5;
+
 function main() {
 	// modal
 	const modalButtons = document.querySelectorAll('.js-open-modal');
@@ -37,20 +39,26 @@ function main() {
 	);
 	// menu
 	const menuLinks = document.querySelectorAll('.js-menu-link');
+	const menuContentItems = document.querySelectorAll('.js-menu-content');
+	const leftArrow = document.querySelector('.js-left-arrow');
+	const rightArrow = document.querySelector('.js-right-arrow');
+	const digit = document.querySelector('.js-digit');
+	console.log('digit:', digit);
 
 	function clickMenuLink(event) {
 		event.preventDefault();
 		const activeLink = [...menuLinks].find((link) => link.classList.contains('active'));
-
 		activeLink?.classList.remove('active');
 		// eslint-disable-next-line no-invalid-this
 		const linkName = this.dataset.menu;
-		const menuContentItems = document.querySelectorAll('.js-menu-content');
 		menuContentItems?.forEach((elem, index) => {
 			if (elem.dataset?.menu === linkName) {
 				elem?.classList.add('active');
-
-				console.log('index:', index);
+				digit.innerHTML = index + 1;
+				if (index > 0) leftArrow.classList.remove('js-disable');
+				if (index === 0) leftArrow.classList.add('js-disable');
+				if (index < MAX_INDEX) rightArrow.classList.remove('js-disable');
+				if (index === MAX_INDEX) rightArrow.classList.add('js-disable');
 			} else elem?.classList.contains('active') ? elem.classList.remove('active') : null;
 			// eslint-disable-next-line no-invalid-this
 			this.classList.add('active');
@@ -60,6 +68,46 @@ function main() {
 	menuLinks?.forEach((link) => {
 		link.addEventListener('click', clickMenuLink);
 	});
+
+	function clickLeftArrow(event) {
+		event.preventDefault();
+
+		if (event.currentTarget.classList.contains('js-disable')) return;
+		menuContentItems?.forEach((elem, index) => {
+			if (elem?.classList.contains('active') && index > 0) {
+				digit.innerHTML = index;
+				elem.classList.remove('active');
+				menuContentItems?.[index - 1].classList.add('active');
+				menuLinks?.[index].classList.remove('active');
+				menuLinks?.[index - 1].classList.add('active');
+				if (index === 1) leftArrow.classList.add('js-disable');
+				if (index === MAX_INDEX) rightArrow.classList.remove('js-disable');
+			}
+		});
+	}
+
+	function clickRigthArrow(event) {
+		event.preventDefault();
+		if (event.currentTarget.classList.contains('js-disable')) return;
+		let activeIndex = null;
+		menuContentItems?.forEach((elem, index) => {
+			if (elem?.classList.contains('active') && index < MAX_INDEX) {
+				activeIndex = index + 1;
+				elem.classList.remove('active');
+				menuLinks?.[index].classList.remove('active');
+				if (index === MAX_INDEX - 1) rightArrow.classList.add('js-disable');
+				if (index === 0) leftArrow.classList.remove('js-disable');
+			}
+		});
+		if (activeIndex) {
+			menuContentItems?.[activeIndex].classList.add('active');
+			menuLinks?.[activeIndex].classList.add('active');
+			digit.innerHTML = activeIndex + 1;
+		}
+	}
+
+	leftArrow.addEventListener('click', clickLeftArrow);
+	rightArrow.addEventListener('click', clickRigthArrow);
 }
 
 document.addEventListener('DOMContentLoaded', main);
