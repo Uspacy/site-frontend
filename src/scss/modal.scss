@@ -90,6 +90,10 @@
 					outline: none;
 				}
 
+				.btnSubmit:disabled {
+					color: $color-grey50;
+				}
+
 				.email {
 					background: $color-grey25;
 					text-align: center;

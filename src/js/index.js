@@ -106,8 +106,23 @@ function main() {
 		}
 	}
 
-	leftArrow.addEventListener('click', clickLeftArrow);
-	rightArrow.addEventListener('click', clickRigthArrow);
+	leftArrow?.addEventListener('click', clickLeftArrow);
+	rightArrow?.addEventListener('click', clickRigthArrow);
+
+	// checkbox
+	const consent = document.querySelector('#consent');
+	const modalConsent = document.querySelector('#modalConsent');
+	console.log('modalConsent:', modalConsent);
+	console.log('consent:', consent);
+
+	function changeCheckbox(event) {
+		const btnSubmit = this.parentElement.parentElement.querySelector('.btnSubmit');
+		btnSubmit.disabled = !this.checked;
+		console.log('btnSubmit:', btnSubmit);
+	}
+
+	consent?.addEventListener('change', changeCheckbox);
+	modalConsent?.addEventListener('change', changeCheckbox);
 }
 
 document.addEventListener('DOMContentLoaded', main);
