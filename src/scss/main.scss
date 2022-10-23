@@ -159,8 +159,8 @@
 			height: 60px;
 			position: relative;
 			bottom: -2px;
-			transition: all 0.2s ease-in;
 		}
+
 		a:not(:last-child) {
 			margin-right: 15px;
 		}
@@ -237,7 +237,7 @@
 		justify-content: space-between;
 		align-items: flex-start;
 		line-height: 165%;
-		// min-height: 320px;
+		min-height: 320px;
 
 		div {
 			width: 40%;
@@ -373,7 +373,7 @@
 				color: white;
 				display: block;
 				width: 1.6em;
-				height: 1em;
+				height: 0.9em;
 				margin-right: 11px;
 				border: 2px solid $color-grey;
 				border-radius: 4px;
@@ -396,6 +396,7 @@
 			.label {
 				display: flex;
 				justify-content: space-between;
+				cursor: pointer;
 
 				span {
 					display: inline-block;

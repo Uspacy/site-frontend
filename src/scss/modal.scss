@@ -1,7 +1,7 @@
 .modal {
 	opacity: 0;
 	visibility: hidden;
-	transition: 0.4s all;
+	transition: 0.5s all;
 
 	.overlay {
 		position: fixed;
@@ -107,8 +107,8 @@
 				text-align: center;
 				color: $color-magenta;
 				display: block;
-				width: 1.8em;
-				height: 1em;
+				width: 1.6em;
+				height: 0.9em;
 				margin-right: 11px;
 				border: 2px solid $color-grey;
 				border-radius: 4px;
