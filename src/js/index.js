@@ -8,8 +8,22 @@ function main() {
 	const modalElem = document.querySelector('.js-modal');
 	const overlay = document.querySelector('.js-overlay');
 
+	const firstKnow = document.querySelector('.js-modal-first-know');
+	const modalSuccess = document.querySelector('.js-modal-success');
+
+	function showHideModalSuccess() {
+		if (firstKnow && modalSuccess) {
+			firstKnow.classList.toggle('unvisible');
+			modalSuccess.classList.toggle('unvisible');
+		}
+	}
+
 	function openModal(event) {
 		event.preventDefault();
+		if (firstKnow && modalSuccess) {
+			firstKnow.classList.remove('unvisible');
+			modalSuccess.classList.add('unvisible');
+		}
 		modalElem?.classList.add('active');
 		overlay?.classList.add('active');
 	}
@@ -17,6 +31,7 @@ function main() {
 		e.preventDefault();
 		modalElem?.classList.remove('active');
 		overlay?.classList.remove('active');
+		showHideModalSuccess();
 	}
 
 	modalButtons?.forEach(function (item) {
@@ -112,17 +127,34 @@ function main() {
 	// checkbox
 	const consent = document.querySelector('#consent');
 	const modalConsent = document.querySelector('#modalConsent');
-	console.log('modalConsent:', modalConsent);
-	console.log('consent:', consent);
 
 	function changeCheckbox(event) {
+		// eslint-disable-next-line no-invalid-this
 		const btnSubmit = this.parentElement.parentElement.querySelector('.btnSubmit');
-		btnSubmit.disabled = !this.checked;
-		console.log('btnSubmit:', btnSubmit);
+		// eslint-disable-next-line no-invalid-this
+		if (btnSubmit) btnSubmit.disabled = !this.checked;
 	}
 
 	consent?.addEventListener('change', changeCheckbox);
 	modalConsent?.addEventListener('change', changeCheckbox);
+
+	// form
+	const form = document.querySelector('.js-form');
+	const modalForm = document.querySelector('.js-modal-form');
+
+	function submit(event) {
+		event.preventDefault();
+		// eslint-disable-next-line no-invalid-this
+		if (this.classList.contains('js-modal-form')) {
+			showHideModalSuccess();
+		}
+
+		// eslint-disable-next-line no-invalid-this
+		this.reset();
+	}
+
+	form?.addEventListener('submit', submit);
+	modalForm?.addEventListener('submit', submit);
 }
 
 document.addEventListener('DOMContentLoaded', main);
