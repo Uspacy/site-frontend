@@ -237,7 +237,8 @@
 		justify-content: space-between;
 		align-items: flex-start;
 		line-height: 165%;
-		min-height: 300px;
+		min-height: 330px;
+		transition: opacity 0.6s ease-in-out;
 
 		@media (max-width: $small) {
 			justify-content: flex-start;
