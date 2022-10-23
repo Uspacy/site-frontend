@@ -1,4 +1,5 @@
 const MAX_INDEX = 5;
+const emailPattern = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
 function main() {
 	// modal
@@ -142,8 +143,25 @@ function main() {
 	const form = document.querySelector('.js-form');
 	const modalForm = document.querySelector('.js-modal-form');
 
+	document.querySelectorAll('.email').forEach((emailItem) =>
+		emailItem.addEventListener('change', (event) => {
+			emailItem.classList.remove('emailError');
+		}),
+	);
+
 	function submit(event) {
 		event.preventDefault();
+		// eslint-disable-next-line no-invalid-this
+		const email = this.querySelector('.email');
+		if (email?.value.length < 2 || !emailPattern.test(email?.value)) {
+			email.classList.add('emailError');
+			return;
+		}
+
+		//
+		// send form
+		//
+
 		// eslint-disable-next-line no-invalid-this
 		if (this.classList.contains('js-modal-form')) {
 			showHideModalSuccess();

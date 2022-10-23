@@ -105,6 +105,10 @@
 					color: $color-white;
 				}
 
+				.emailError {
+					border: 1px solid $color-red;
+				}
+
 				.btnSubmit {
 					background: inherit;
 					color: $color-white;

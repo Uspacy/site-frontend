@@ -358,6 +358,9 @@
 					font-size: 12px;
 					color: $color-black;
 				}
+				.emailError {
+					border: 1px solid $color-red;
+				}
 
 				.btnSubmit {
 					background: $bg-gradient-cian;
