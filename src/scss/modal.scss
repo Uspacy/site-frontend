@@ -17,7 +17,10 @@
 	}
 
 	.modalWindow {
+		color: $color-white;
 		max-width: 484px;
+		min-width: 320px;
+		min-height: 500px;
 		background-color: $color-magenta;
 		border-radius: 16px;
 		padding: 54px 10px;
@@ -26,6 +29,25 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 		z-index: 30;
+		@include flex;
+		flex-direction: column;
+
+		@media (max-width: $xsmall) {
+			min-height: 92vh;
+			width: 100vw;
+			border-radius: 0;
+		}
+	}
+
+	.modalContent {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 630px;
+
+		@media (max-width: $xsmall) {
+			min-height: 85vh;
+		}
 	}
 
 	.close {
@@ -40,7 +62,6 @@
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: center;
-		color: $color-white;
 
 		.leftBlock {
 			width: 47%;
@@ -136,11 +157,37 @@
 	.backWrapper {
 		text-align: center;
 		margin-top: 47px;
+		position: absolute;
+		bottom: 30px;
+
+		@media (max-width: $xsmall) {
+			bottom: 10%;
+		}
 	}
 
 	.back {
 		color: $color-white;
 		text-decoration: underline;
+	}
+
+	.modalSuccess {
+		@include flex;
+		flex-direction: column;
+		text-align: center;
+
+		.successHeading {
+			font-weight: 700;
+			font-size: 16px;
+			line-height: 150%;
+			margin: 13px 0 24px 0;
+		}
+		.successText {
+			max-width: 270px;
+		}
+	}
+
+	.unvisible {
+		display: none;
 	}
 }
 
