@@ -35,7 +35,7 @@
 		cursor: pointer;
 	}
 
-	.modal_firstKnow {
+	.modalFirstKnow {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
@@ -55,7 +55,7 @@
 		.rightBlock {
 			width: 43%;
 
-			.modal_form {
+			.modalForm {
 				@include flex;
 
 				flex-direction: column-reverse;
@@ -105,7 +105,7 @@
 				content: '\2713';
 				font-size: 18px;
 				text-align: center;
-				color: $color-white;
+				color: $color-magenta;
 				display: block;
 				width: 1.8em;
 				height: 1em;
@@ -116,12 +116,13 @@
 			}
 
 			#modalConsent:checked ~ label::before {
-				color: $color-black;
+				color: $color-white;
 			}
 
 			.label {
 				display: flex;
 				justify-content: space-between;
+				cursor: pointer;
 
 				span {
 					display: inline-block;

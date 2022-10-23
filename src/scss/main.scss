@@ -382,6 +382,9 @@
 					width: 1em;
 				}
 				@media (max-width: $xsmall) {
+					width: 1.2em;
+				}
+				@media (max-width: 470px) {
 					width: 1.6em;
 				}
 			}

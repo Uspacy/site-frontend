@@ -37,13 +37,13 @@ function main() {
 		},
 		false,
 	);
+
 	// menu
 	const menuLinks = document.querySelectorAll('.js-menu-link');
 	const menuContentItems = document.querySelectorAll('.js-menu-content');
 	const leftArrow = document.querySelector('.js-left-arrow');
 	const rightArrow = document.querySelector('.js-right-arrow');
 	const digit = document.querySelector('.js-digit');
-	console.log('digit:', digit);
 
 	function clickMenuLink(event) {
 		event.preventDefault();
