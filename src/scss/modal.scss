@@ -30,6 +30,7 @@
 		transform: translate(-50%, -50%);
 		z-index: 30;
 		@include flex;
+
 		flex-direction: column;
 
 		@media (max-width: $xsmall) {
@@ -126,7 +127,7 @@
 				margin-top: 17px;
 			}
 
-			#modalConsent {
+			#modal-consent {
 				opacity: 0;
 			}
 
@@ -144,7 +145,7 @@
 				line-height: 90%;
 			}
 
-			#modalConsent:checked ~ label::before {
+			#modal-consent:checked ~ label::before {
 				color: $color-white;
 			}
 
@@ -180,6 +181,7 @@
 
 	.modalSuccess {
 		@include flex;
+
 		flex-direction: column;
 		text-align: center;
 
@@ -187,8 +189,9 @@
 			font-weight: 700;
 			font-size: 16px;
 			line-height: 150%;
-			margin: 13px 0 24px 0;
+			margin: 13px 0 24px;
 		}
+
 		.successText {
 			max-width: 270px;
 		}

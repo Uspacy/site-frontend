@@ -127,7 +127,7 @@ function main() {
 
 	// checkbox
 	const consent = document.querySelector('#consent');
-	const modalConsent = document.querySelector('#modalConsent');
+	const modalConsent = document.querySelector('#modal-consent');
 
 	function changeCheckbox(event) {
 		// eslint-disable-next-line no-invalid-this

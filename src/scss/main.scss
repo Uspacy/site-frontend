@@ -45,6 +45,7 @@
 			top: -20px;
 		}
 	}
+
 	.infoBlockWrapper {
 		position: relative;
 		overflow-x: hidden;
@@ -53,13 +54,10 @@
 	.runStrBlock {
 		position: absolute;
 		top: 135px;
-		height: 90px;
 		width: 110%;
 		height: 33px;
-
 		transform: rotate(-1.3deg);
 		background: $color-white;
-
 		font-weight: 700;
 		font-size: 10px;
 		line-height: 150%;
@@ -77,6 +75,7 @@
 			animation: strRun 15s infinite linear;
 			white-space: nowrap;
 		}
+
 		.blueCircle {
 			display: inline-block;
 			width: 5px;
@@ -87,14 +86,15 @@
 			position: relative;
 			bottom: 2px;
 		}
-		@keyframes strRun {
-			0% {
-				transform: translate(0, 0);
-			}
+	}
 
-			100% {
-				transform: translate(-110%, 0);
-			}
+	@keyframes strRun {
+		0% {
+			transform: translate(0, 0);
+		}
+
+		100% {
+			transform: translate(-110%, 0);
 		}
 	}
 
@@ -117,7 +117,6 @@
 			justify-content: flex-end;
 			border-radius: 0;
 			background: url('../img/uspacy_mobl_bg2.png') top no-repeat;
-
 			background-size: 100% 100%;
 		}
 
@@ -149,7 +148,6 @@
 
 		a {
 			max-width: 150px;
-			height: 100%;
 			display: inline-block;
 			font-weight: 400;
 			font-size: 14px;
@@ -192,6 +190,7 @@
 			height: 50px;
 			position: absolute;
 			@include flex;
+
 			font-weight: 700;
 			font-size: 12px;
 			line-height: 150%;
@@ -358,6 +357,7 @@
 					font-size: 12px;
 					color: $color-black;
 				}
+
 				.emailError {
 					border: 1px solid $color-red;
 				}
@@ -443,7 +443,6 @@
 		@media (max-width: $small) {
 			padding-left: 24px;
 			padding-right: 24px;
-
 			width: 90%;
 			min-height: 705px;
 			flex-direction: column;
