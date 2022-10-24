@@ -159,28 +159,26 @@ function main() {
 				return;
 			}
 
-			//
 			// send form
-
 			const url = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSePNhSya-JPbAQHCN91X95hJRVfaitw8x25yjfQM5Qs_vH47w/formResponse';
+			const formData = new FormData();
+			formData.append('entry.568783889', email.value);
+
 			const response = await fetch(url, {
 				headers: {
 					method: 'POST',
 				},
-				body: `entry.568783889=${email?.value}`,
+				body: formData,
 			});
-			// console.log('response:', response);
 			if (response.ok) {
-			}
-			//
-
-			// eslint-disable-next-line no-invalid-this
-			if (this.classList.contains('js-modal-form')) {
-				showHideModalSuccess();
-			}
-			// eslint-disable-next-line no-invalid-this
-			if (this.classList.contains('js-form')) {
-				// show success window
+				// eslint-disable-next-line no-invalid-this
+				if (this.classList.contains('js-modal-form')) {
+					showHideModalSuccess();
+				}
+				// eslint-disable-next-line no-invalid-this
+				if (this.classList.contains('js-form')) {
+					// show success window
+				}
 			}
 
 			// eslint-disable-next-line no-invalid-this
