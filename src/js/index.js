@@ -169,8 +169,8 @@ function main() {
 			const formData = new FormData();
 			formData.append('entry.568783889', email.value);
 			const response = await fetch(url, {
+				method: 'POST',
 				headers: {
-					method: 'POST',
 					headers: { 'Content-Type': 'multipart/form-data' },
 				},
 				body: formData,
