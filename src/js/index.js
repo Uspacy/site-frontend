@@ -142,6 +142,12 @@ function main() {
 	// form
 	const form = document.querySelector('.js-form');
 	const modalForm = document.querySelector('.js-modal-form');
+	const successWindow = document.querySelector('.js-success-window');
+
+	function showHideSuccess() {
+		successWindow?.classList.toggle('unvisible');
+		form?.classList.toggle('unvisible');
+	}
 
 	document.querySelectorAll('.email').forEach((emailItem) =>
 		emailItem.addEventListener('change', (event) => {
@@ -150,8 +156,8 @@ function main() {
 	);
 
 	async function submit(event) {
-		event.preventDefault();
 		try {
+			event.preventDefault();
 			// eslint-disable-next-line no-invalid-this
 			const email = this.querySelector('.email');
 			if (email?.value.length < 2 || !emailPattern.test(email?.value)) {
@@ -159,14 +165,13 @@ function main() {
 				return;
 			}
 
-			// send form
 			const url = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSePNhSya-JPbAQHCN91X95hJRVfaitw8x25yjfQM5Qs_vH47w/formResponse';
 			const formData = new FormData();
 			formData.append('entry.568783889', email.value);
-
 			const response = await fetch(url, {
 				headers: {
 					method: 'POST',
+					headers: { 'Content-Type': 'multipart/form-data' },
 				},
 				body: formData,
 			});
@@ -177,13 +182,15 @@ function main() {
 				}
 				// eslint-disable-next-line no-invalid-this
 				if (this.classList.contains('js-form')) {
-					// show success window
+					showHideSuccess();
+					setTimeout(showHideSuccess, 3000);
 				}
 			}
 
 			// eslint-disable-next-line no-invalid-this
 			this.reset();
 		} catch (err) {
+			console.log('Виникла помилка при відправці email!');
 			console.log(err);
 		}
 	}
