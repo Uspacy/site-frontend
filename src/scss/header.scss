@@ -153,6 +153,10 @@
 			right: 30px;
 			top: 30px;
 			cursor: pointer;
+
+			@media (max-width: $xsmall) {
+				right: 45px;
+			}
 		}
 
 		.useCookies {
