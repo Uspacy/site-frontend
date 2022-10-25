@@ -40,18 +40,20 @@ footer {
 .footerLinks {
 	@media (max-width: $xsmall) {
 		position: relative;
+	}
 
+	@media (max-width: 480px) {
 		div:first-child {
 			position: absolute;
 			width: 230px;
 			top: 45px;
-			left: -160px;
+			left: -190px;
 		}
 	}
 
 	@media (max-width: 420px) {
 		div:first-child {
-			left: -120px;
+			left: -140px;
 		}
 	}
 }

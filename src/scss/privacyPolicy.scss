@@ -18,6 +18,13 @@
 				color: $color-black;
 			}
 		}
+		& li:not(:last-child) {
+			margin-bottom: 8px;
+		}
+
+		.mt12 {
+			margin-top: 12px;
+		}
 
 		.politicHeader {
 			@include flex;

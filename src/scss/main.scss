@@ -255,6 +255,10 @@
 		}
 	}
 
+	.contentItem li:not(:last-child) {
+		margin-bottom: 8px;
+	}
+
 	.desire {
 		display: flex;
 		flex-direction: column;

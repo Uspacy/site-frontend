@@ -18,6 +18,10 @@
 				color: $color-black;
 			}
 		}
+
+		& li:not(:last-child) {
+			margin-bottom: 8px;
+		}
 	}
 
 	.cookiesHeader {
