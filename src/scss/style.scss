@@ -1,3 +1,13 @@
+@import './reset.css';
+@import './var.scss';
+@import './header.scss';
+@import './main.scss';
+@import './privacyPolicy.scss';
+@import './cookiesPolicy.scss';
+@import './404.scss';
+@import './modal.scss';
+@import './footer.scss';
+
 $font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
 
 @font-face {
@@ -7,13 +17,45 @@ $font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
 	src: url('../fonts/Roboto-Regular.ttf');
 }
 
+@font-face {
+	font-family: e-Ukraine;
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/e-Ukraine/e-Ukraine-Regular.ttf');
+}
+
 body {
 	font-family: $font-stack;
-	color: #f00;
+	color: $color-black;
+	font-weight: 400;
+	font-size: 14px;
+}
 
-	.logo {
-		width: 1000px;
-		height: 287px;
-		background-image: url('../img/logo.png');
-	}
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+.wrapper {
+	overflow: hidden;
+	min-height: 100%;
+	font-family: e-Ukraine;
+}
+
+.container {
+	padding: 0 10px;
+	max-width: 836px;
+	margin: 0 auto;
+}
+
+.cian {
+	color: $color-cian;
+}
+
+.magenta {
+	color: $color-magenta;
 }

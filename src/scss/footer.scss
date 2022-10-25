@@ -1,0 +1,78 @@
+footer {
+	padding: 47px 0 100px;
+	// margin-top: 300px;
+}
+
+.footerText {
+	width: 100%;
+	text-align: center;
+
+	span:first-child {
+		color: $color-yellow;
+		margin-right: 0.6em;
+	}
+
+	span:last-child {
+		color: $color-magenta;
+	}
+}
+
+.footerIconsWrapper {
+	@include flex;
+
+	margin-top: 30px;
+}
+
+.icons a {
+	margin-right: 12px;
+}
+
+.footerLinks,
+.repiashky {
+	@include flex;
+
+	a {
+		color: $color-black;
+		text-decoration: underline;
+	}
+}
+
+.footerLinks {
+	@media (max-width: $xsmall) {
+		position: relative;
+	}
+
+	@media (max-width: 480px) {
+		div:first-child {
+			position: absolute;
+			width: 230px;
+			top: 45px;
+			left: -190px;
+		}
+	}
+
+	@media (max-width: 420px) {
+		div:first-child {
+			left: -140px;
+		}
+	}
+}
+
+.repiashky {
+	margin-left: 32px;
+
+	& span {
+		margin-left: 12px;
+		color: $color-black;
+	}
+}
+
+.facebook:hover svg path:first-child,
+.twiter:hover svg path:first-child,
+.linkedln:hover svg path:first-child,
+.instagramm:hover svg path:first-child,
+.repiashky:hover svg path:first-child,
+.repiashky:hover svg circle:last-child,
+.telegram:hover svg path:first-child {
+	fill: $color-magenta;
+}

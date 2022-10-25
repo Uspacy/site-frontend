@@ -1,0 +1,191 @@
+@import './var.scss';
+
+.header {
+	box-sizing: content-box;
+	width: 100%;
+	padding-top: 37px;
+	background-image: url('../img/main_background.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+
+	min-height: 860px;
+
+	@media (max-width: $small) {
+		background-image: url('../img/uspacy_mobl_bg1.png');
+	}
+
+	.headerContent {
+		height: 100%;
+		min-height: 860px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	.logoText {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+
+		@media (max-width: $xsmall) {
+			flex-direction: column;
+			width: 100%;
+		}
+	}
+
+	.logo {
+		padding-right: 66px;
+
+		@media (max-width: $xsmall) {
+			left: 20px;
+			z-index: 100;
+			padding-right: 0;
+			width: 100%;
+		}
+	}
+
+	.createText {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 11px;
+		line-height: 120%;
+		color: $color-white;
+
+		@media (max-width: $xsmall) {
+			text-align: right;
+			width: 100%;
+			margin-top: 30px;
+		}
+	}
+
+	.createText::after {
+		content: '';
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		background-image: url('../img/flag.png');
+		position: relative;
+		top: -8px;
+		right: -4px;
+		@media (max-width: 490px) {
+			top: 0;
+		}
+	}
+
+	.effectiveText {
+		color: $color-white;
+
+		h2 {
+			font-weight: 700;
+			font-size: 45px;
+			line-height: 110%;
+			@media (max-width: $small) {
+				padding-top: 350px;
+				font-size: 30px;
+			}
+		}
+
+		.smallerText {
+			margin-top: 15px;
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 130%;
+			max-width: 334px;
+			@media (max-width: $small) {
+				span {
+					color: $color-white;
+				}
+			}
+		}
+
+		.btnNotify {
+			@include notifyMe;
+		}
+	}
+
+	.headerLastText {
+		max-width: 369px;
+		@include fw400;
+	}
+
+	.cookiesModal {
+		opacity: 0;
+		visibility: hidden;
+		transition: 0.5s all;
+
+		.overlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: $color-overlay;
+			z-index: 20;
+			opacity: 0;
+			visibility: hidden;
+			transition: 0.4s all;
+		}
+
+		.cookiesModalWindow {
+			color: $color-white;
+			max-width: 620px;
+			min-width: 320px;
+			min-height: 218px;
+			background-color: $color-magenta;
+			border-radius: 16px;
+			padding: 30px 38px;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 30;
+
+			flex-direction: column;
+		}
+
+		.close {
+			position: absolute;
+			right: 30px;
+			top: 30px;
+			cursor: pointer;
+		}
+
+		.useCookies {
+			.heading {
+				display: inline-block;
+				font-weight: 700;
+				font-size: 12px;
+				line-height: 150%;
+				margin-left: 20px;
+				transform: translateY(-5px);
+			}
+		}
+
+		.useCookiesText {
+			font-weight: 300;
+			font-size: 12px;
+			line-height: 160%;
+			margin: 20px 0 40px;
+			max-width: 520px;
+		}
+
+		.cookiesModalBtns {
+			max-width: 80%;
+			@include flex;
+
+			.accept {
+				padding: 12px 40px;
+				border: 2px solid $color-white;
+				border-radius: 50px;
+				cursor: pointer;
+			}
+		}
+	}
+
+	.cookiesModal.active,
+	.overlay.active {
+		opacity: 1;
+		visibility: visible;
+	}
+}

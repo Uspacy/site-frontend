@@ -1,0 +1,23 @@
+name: Build and Test
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build_test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+      - name: Use Node.js 17.x
+        uses: actions/setup-node@main
+        with:
+          node-version: 17.x
+      - name: npm install, build, test and lint
+        run: |
+          npm install
+          npm run build
+          npm run eslint
+          npm run stylelint
+        env:
+          NPM_AUTH_TOKEN: ${{secrets.NPM_AUTH_TOKEN}}
