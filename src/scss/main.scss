@@ -284,6 +284,10 @@
 		.leftBlock {
 			width: 47%;
 
+			p {
+				margin-top: 24px;
+			}
+
 			@media (max-width: $small) {
 				width: 100%;
 			}
