@@ -22,6 +22,9 @@
 		& li:not(:last-child) {
 			margin-bottom: 8px;
 		}
+		& ul ~ p {
+			margin-top: 12px;
+		}
 	}
 
 	.cookiesHeader {
@@ -100,14 +103,16 @@
 		.title {
 			font-weight: 700;
 			display: none;
-			margin-right: 10%;
+			margin-right: 30px;
+
 			@media (max-width: $small) {
 				display: inline;
+				min-width: 30%;
 			}
 		}
 
 		.name {
-			width: 14%;
+			width: 20%;
 		}
 
 		.provider {

@@ -39,7 +39,6 @@
 
 		@media (max-width: $xsmall) {
 			left: 20px;
-			z-index: 100;
 			padding-right: 0;
 			width: 100%;
 		}
@@ -198,8 +197,15 @@
 			justify-items: center;
 			row-gap: 20px;
 
+			a {
+				text-decoration: underline;
+				color: $color-white;
+			}
+
 			.reject {
 				grid-area: four;
+				cursor: pointer;
+				text-decoration: underline;
 			}
 
 			.accept {
@@ -218,6 +224,7 @@
 
 			.police {
 				grid-area: six;
+				cursor: pointer;
 			}
 		}
 	}
