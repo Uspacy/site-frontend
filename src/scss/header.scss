@@ -6,12 +6,12 @@
 	padding-top: 37px;
 	background-image: url('../img/main_background.png');
 	background-repeat: no-repeat;
-	background-size: cover;
+	background-size: 100% 100%;
+
 	min-height: 860px;
 
 	@media (max-width: $small) {
 		background-image: url('../img/uspacy_mobl_bg1.png');
-		background-size: 100% 100%;
 	}
 
 	.headerContent {
