@@ -15,6 +15,7 @@ function main() {
 
 	closeCookiesModalButton?.addEventListener('click', closeCookiesModal);
 	cookiesOverlay.addEventListener('click', closeCookiesModal);
+	cookiesModal.querySelector('.js-accept')?.addEventListener('click', closeCookiesModal);
 
 	// modal
 	const modalButtons = document.querySelectorAll('.js-open-modal');
