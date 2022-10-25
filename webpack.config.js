@@ -32,6 +32,7 @@ const config = {
 			directory: path.join(__dirname, 'public'),
 			watch: true,
 		},
+		open: true,
 		port: 3000,
 	},
 	devtool: 'source-map',
