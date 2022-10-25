@@ -2,12 +2,26 @@ const MAX_INDEX = 5;
 const emailPattern = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
 function main() {
+	// cookies modal
+	const cookiesModal = document.querySelector('.js-cookies-modal');
+	const closeCookiesModalButton = document.querySelector('.js-cookies-modal-close');
+	const cookiesOverlay = cookiesModal.querySelector('.js-overlay');
+
+	function closeCookiesModal(event) {
+		event.preventDefault();
+		cookiesModal?.classList.remove('active');
+		cookiesOverlay?.classList.remove('active');
+	}
+
+	closeCookiesModalButton?.addEventListener('click', closeCookiesModal);
+	cookiesOverlay.addEventListener('click', closeCookiesModal);
+
 	// modal
 	const modalButtons = document.querySelectorAll('.js-open-modal');
 	const closeButton = document.querySelector('.js-modal-close');
 	const backButton = document.querySelector('.js-modal-back');
 	const modalElem = document.querySelector('.js-modal');
-	const overlay = document.querySelector('.js-overlay');
+	const overlay = modalElem.querySelector('.js-overlay');
 
 	const firstKnow = document.querySelector('.js-modal-first-know');
 	const modalSuccess = document.querySelector('.js-modal-success');
@@ -48,7 +62,9 @@ function main() {
 		function (event) {
 			if (event.code == 'Escape') {
 				document.querySelector('.modal.active')?.classList.remove('active');
-				document.querySelector('.overlay')?.classList.remove('active');
+				document.querySelector('.overlay.active')?.classList.remove('active');
+				cookiesModal?.classList.remove('active');
+				cookiesOverlay?.classList.remove('.active');
 			}
 		},
 		false,

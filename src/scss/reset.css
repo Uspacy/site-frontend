@@ -1,7 +1,11 @@
-a simpler reset
-http://www.maxdesign.com.au/articles/css-reset/
-*/
-html, body, ul, ol, li, form, fieldset, legend {
+html,
+body,
+ul,
+ol,
+li,
+form,
+fieldset,
+legend {
 	margin: 0;
 	padding: 0;
 }
