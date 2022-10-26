@@ -29,6 +29,7 @@ $font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
 		& li:not(:last-child) {
 			margin-bottom: 8px;
 		}
+
 		& ul ~ p {
 			margin-top: 12px;
 		}

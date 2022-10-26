@@ -135,7 +135,7 @@
 				input:-webkit-autofill:hover,
 				input:-webkit-autofill:focus {
 					-webkit-text-fill-color: $color-white;
-					-webkit-box-shadow: 0 0 0px 0px $color-grey25 inset;
+					box-shadow: 0 0 0 0 $color-grey25 inset; // eslint-disable-line
 					transition: background-color 5000s ease-in-out 0s;
 				}
 

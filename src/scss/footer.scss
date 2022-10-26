@@ -3,6 +3,15 @@ footer {
 	// margin-top: 300px;
 }
 
+.repiashky {
+	margin-left: 32px;
+
+	span {
+		margin-left: 12px;
+		color: $color-black;
+	}
+}
+
 .footerText {
 	width: 100%;
 	text-align: center;
@@ -55,15 +64,6 @@ footer {
 		div:first-child {
 			left: -140px;
 		}
-	}
-}
-
-.repiashky {
-	margin-left: 32px;
-
-	& span {
-		margin-left: 12px;
-		color: $color-black;
 	}
 }
 

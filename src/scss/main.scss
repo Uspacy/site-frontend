@@ -185,6 +185,11 @@ $font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
 				position: static;
 			}
 
+			.leftArrow {
+				display: inline-block;
+				transform: rotate(180deg);
+			}
+
 			.leftArrow,
 			.rightArrow {
 				padding: 12px;
@@ -209,11 +214,6 @@ $font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
 				opacity: 0.4;
 				padding-left: 4px;
 			}
-		}
-
-		.leftArrow {
-			display: inline-block;
-			transform: rotate(180deg);
 		}
 	}
 
@@ -250,6 +250,8 @@ $font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
 		li span {
 			display: block;
 			padding-left: 12px;
+			color: $color-black;
+			line-height: 165%;
 		}
 
 		@media (max-width: $small) {
@@ -279,11 +281,6 @@ $font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
 	.contentItem li {
 		color: $color-magenta;
 		list-style-image: url('../img/blueEllipse.png');
-
-		span {
-			color: $color-black;
-			line-height: 165%;
-		}
 	}
 
 	.contentItem li:not(:last-child) {
@@ -378,8 +375,7 @@ $font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
 				input:-webkit-autofill:hover,
 				input:-webkit-autofill:focus {
 					-webkit-text-fill-color: $color-black;
-
-					-webkit-box-shadow: 0 0 0px 0px $color-grey25 inset;
+					box-shadow: 0 0 0 0 $color-grey25 inset;
 					transition: background-color 5000s ease-in-out 0s;
 				}
 
@@ -502,6 +498,7 @@ $font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
 
 		h4 {
 			font-size: 14px;
+			font-weight: 700;
 		}
 
 		@media (min-width: 450px) {
@@ -567,10 +564,6 @@ $font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
 					display: none;
 				}
 			}
-		}
-
-		h4 {
-			font-weight: 700;
 		}
 	}
 }
