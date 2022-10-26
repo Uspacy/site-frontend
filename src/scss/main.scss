@@ -26,6 +26,14 @@
 	.textOne {
 		grid-area: left;
 
+		@media (max-width: $small) {
+			font-size: 12px;
+		}
+
+		span {
+			font-weight: 700;
+		}
+
 		.borderDotted {
 			padding: 2px 8px 4px;
 			border: 1.5px dashed $color-magenta;
@@ -43,6 +51,11 @@
 		@media screen and (min-width: $small) {
 			position: relative;
 			top: -20px;
+		}
+
+		@media (max-width: $small) {
+			font-size: 16px;
+			line-height: 24px;
 		}
 	}
 
@@ -79,9 +92,11 @@
 			min-height: 705px;
 			flex-direction: column;
 			justify-content: flex-end;
+			align-items: center;
 			border-radius: 0;
 			background: url('../img/uspacy_mobl_bg2.png') top no-repeat;
-			background-size: 100% 100%;
+			background-size: cover;
+			background-position: center;
 		}
 
 		.text {
@@ -96,6 +111,10 @@
 
 	.btnNotify {
 		@include notifyMe;
+
+		@media (max-width: $small) {
+			font-size: 12px;
+		}
 	}
 
 	.menu {

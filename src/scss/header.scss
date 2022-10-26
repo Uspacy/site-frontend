@@ -113,6 +113,15 @@
 	.headerLastText {
 		max-width: 369px;
 		@include fw400;
+
+		span {
+			font-weight: 700;
+		}
+
+		@media (max-width: $small) {
+			font-size: 12px;
+			max-width: 100%;
+		}
 	}
 
 	.cookiesModal {

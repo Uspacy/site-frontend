@@ -7,15 +7,15 @@ function main() {
 	const closeCookiesModalButton = document.querySelector('.js-cookies-modal-close');
 	const cookiesOverlay = cookiesModal?.querySelector('.js-overlay');
 
-	function closeCookiesModal(event) {
-		event.preventDefault();
-		cookiesModal?.classList.remove('active');
-		cookiesOverlay?.classList.remove('active');
-	}
+	// function closeCookiesModal(event) {
+	// 	event.preventDefault();
+	// 	cookiesModal?.classList.remove('active');
+	// 	cookiesOverlay?.classList.remove('active');
+	// }
 
-	closeCookiesModalButton?.addEventListener('click', closeCookiesModal);
-	cookiesOverlay?.addEventListener('click', closeCookiesModal);
-	cookiesModal?.querySelector('.js-accept')?.addEventListener('click', closeCookiesModal);
+	// closeCookiesModalButton?.addEventListener('click', closeCookiesModal);
+	// cookiesOverlay?.addEventListener('click', closeCookiesModal);
+	// cookiesModal?.querySelector('.js-accept')?.addEventListener('click', closeCookiesModal);
 
 	// modal
 	const modalButtons = document.querySelectorAll('.js-open-modal');
@@ -64,8 +64,8 @@ function main() {
 			if (event.code == 'Escape') {
 				document.querySelector('.modal.active')?.classList.remove('active');
 				document.querySelector('.overlay.active')?.classList.remove('active');
-				cookiesModal?.classList.remove('active');
-				cookiesOverlay?.classList.remove('.active');
+				// cookiesModal?.classList.remove('active');
+				// cookiesOverlay?.classList.remove('.active');
 			}
 		},
 		false,
