@@ -120,6 +120,15 @@
 					outline: none;
 				}
 
+				.btnSubmit {
+					background: inherit;
+					color: $color-white;
+					border: 2px solid $color-white;
+					margin-top: 12px;
+					font-weight: 500;
+					cursor: pointer;
+				}
+
 				.btnSubmit:disabled {
 					color: $color-grey50;
 				}
@@ -145,15 +154,6 @@
 
 				.emailError {
 					border: 1px solid $color-red;
-				}
-
-				.btnSubmit {
-					background: inherit;
-					color: $color-white;
-					border: 2px solid $color-white;
-					margin-top: 12px;
-					font-weight: 500;
-					cursor: pointer;
 				}
 			}
 

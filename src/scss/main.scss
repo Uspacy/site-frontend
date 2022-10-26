@@ -360,6 +360,14 @@ $font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
 					outline: none;
 				}
 
+				.btnSubmit {
+					background: $bg-gradient-cian;
+					color: $color-white;
+					margin-top: 12px;
+					font-weight: 500;
+					cursor: pointer;
+				}
+
 				.btnSubmit:disabled {
 					color: $color-grey50;
 				}
@@ -381,14 +389,6 @@ $font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
 
 				.emailError {
 					border: 1px solid $color-red;
-				}
-
-				.btnSubmit {
-					background: $bg-gradient-cian;
-					color: $color-white;
-					margin-top: 12px;
-					font-weight: 500;
-					cursor: pointer;
 				}
 			}
 
