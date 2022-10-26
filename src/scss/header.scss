@@ -83,6 +83,8 @@
 
 	.effectiveText {
 		color: $color-white;
+		max-width: 400px;
+		width: 100%;
 
 		h2 {
 			font-weight: 700;
@@ -115,7 +117,7 @@
 			@include notifyMe;
 
 			@media (max-width: 340px) {
-				width: 280px;
+				width: 265px;
 				margin-right: 10px;
 
 				a {
