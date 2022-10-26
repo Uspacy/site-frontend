@@ -191,11 +191,16 @@
 
 			.leftArrow.js-disable,
 			.rightArrow.js-disable {
-				opacity: 0.4;
+				opacity: 0;
+				display: none;
 			}
 
 			.indexDigit {
 				padding-right: 4px;
+			}
+
+			.slash {
+				opacity: 0.4;
 			}
 
 			.totalCount {
@@ -238,6 +243,11 @@
 		ul {
 			width: 47%;
 			font-weight: 400;
+		}
+
+		li span {
+			display: block;
+			padding-left: 12px;
 		}
 
 		@media (max-width: $small) {
@@ -305,16 +315,25 @@
 
 			p {
 				margin-top: 24px;
-			}
-
-			@media (max-width: $small) {
-				width: 100%;
+				margin-bottom: 28px;
 			}
 
 			.h2 {
 				font-weight: 700;
 				font-size: 24px;
 				line-height: 150%;
+			}
+
+			@media (max-width: $small) {
+				width: 100%;
+
+				.h2 {
+					font-size: 16px;
+				}
+
+				p {
+					font-size: 12px;
+				}
 			}
 		}
 
@@ -396,20 +415,22 @@
 				text-align: center;
 				color: white;
 				display: block;
-				width: 1.6em;
-				height: 0.9em;
+				width: 32px;
+				height: 20px;
 				margin-right: 11px;
 				border: 2px solid $color-grey;
 				border-radius: 4px;
 				line-height: 90%;
+
 				@media (max-width: $small) {
-					width: 1em;
+					width: 20px;
 				}
 				@media (max-width: $xsmall) {
-					width: 1.2em;
+					width: 22px;
 				}
 				@media (max-width: 470px) {
-					width: 1.6em;
+					width: 24px;
+					height: 18px;
 				}
 			}
 
@@ -426,6 +447,11 @@
 					display: inline-block;
 					font-size: 12px;
 					line-height: 165%;
+
+					@media (max-width: $small) {
+						font-size: 10px;
+						line-height: 150%;
+					}
 				}
 			}
 
@@ -471,6 +497,10 @@
 		border-radius: 16px;
 		line-height: 165%;
 
+		h4 {
+			font-size: 14px;
+		}
+
 		@media (min-width: 450px) {
 			width: 100%;
 		}
@@ -484,7 +514,16 @@
 			justify-content: flex-end;
 			border-radius: 0;
 			background: url('../img/uspacy_mobl_bg_3.png') top no-repeat;
-			background-size: 100% 100%;
+			background-size: cover;
+			background-position: center;
+
+			h4 {
+				font-size: 16px;
+			}
+
+			.text {
+				font-size: 12px;
+			}
 		}
 
 		.text {
@@ -493,12 +532,17 @@
 
 		.partnerProgramm {
 			cursor: pointer;
+			font-size: 12px;
 
 			.link {
 				display: inline-block;
 				max-width: 185px;
 				margin-right: 13px;
 				color: $color-white;
+
+				@media (min-width: $small) {
+					text-decoration: underline;
+				}
 			}
 
 			svg path {
