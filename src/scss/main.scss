@@ -1,6 +1,8 @@
+$font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
+
 .mainContent {
 	margin-top: 20px;
-	font-family: 'e-Ukraine';
+	font-family: e-Ukraine, $font-stack;
 
 	.textBlock {
 		display: grid;
@@ -26,6 +28,14 @@
 	.textOne {
 		grid-area: left;
 
+		@media (max-width: $small) {
+			font-size: 12px;
+		}
+
+		span {
+			font-weight: 700;
+		}
+
 		.borderDotted {
 			padding: 2px 8px 4px;
 			border: 1.5px dashed $color-magenta;
@@ -43,6 +53,11 @@
 		@media screen and (min-width: $small) {
 			position: relative;
 			top: -20px;
+		}
+
+		@media (max-width: $small) {
+			font-size: 16px;
+			line-height: 24px;
 		}
 	}
 
@@ -79,9 +94,11 @@
 			min-height: 705px;
 			flex-direction: column;
 			justify-content: flex-end;
+			align-items: center;
 			border-radius: 0;
 			background: url('../img/uspacy_mobl_bg2.png') top no-repeat;
-			background-size: 100% 100%;
+			background-size: cover;
+			background-position: center;
 		}
 
 		.text {
@@ -96,6 +113,10 @@
 
 	.btnNotify {
 		@include notifyMe;
+
+		@media (max-width: $small) {
+			font-size: 12px;
+		}
 	}
 
 	.menu {
@@ -164,30 +185,35 @@
 				position: static;
 			}
 
+			.leftArrow {
+				display: inline-block;
+				transform: rotate(180deg);
+			}
+
 			.leftArrow,
 			.rightArrow {
 				padding: 12px;
 				cursor: pointer;
 			}
 
-			.leftArrow.js-disable,
-			.rightArrow.js-disable {
-				opacity: 0.4;
+			.leftArrow.jsDisable,
+			.rightArrow.jsDisable {
+				opacity: 0;
+				display: none;
 			}
 
 			.indexDigit {
 				padding-right: 4px;
 			}
 
+			.slash {
+				opacity: 0.4;
+			}
+
 			.totalCount {
 				opacity: 0.4;
 				padding-left: 4px;
 			}
-		}
-
-		.leftArrow {
-			display: inline-block;
-			transform: rotate(180deg);
 		}
 	}
 
@@ -221,6 +247,13 @@
 			font-weight: 400;
 		}
 
+		li span {
+			display: block;
+			padding-left: 12px;
+			color: $color-black;
+			line-height: 165%;
+		}
+
 		@media (max-width: $small) {
 			flex-direction: column;
 			line-height: 160%;
@@ -248,11 +281,6 @@
 	.contentItem li {
 		color: $color-magenta;
 		list-style-image: url('../img/blueEllipse.png');
-
-		span {
-			color: $color-black;
-			line-height: 165%;
-		}
 	}
 
 	.contentItem li:not(:last-child) {
@@ -286,16 +314,25 @@
 
 			p {
 				margin-top: 24px;
-			}
-
-			@media (max-width: $small) {
-				width: 100%;
+				margin-bottom: 28px;
 			}
 
 			.h2 {
 				font-weight: 700;
 				font-size: 24px;
 				line-height: 150%;
+			}
+
+			@media (max-width: $small) {
+				width: 100%;
+
+				.h2 {
+					font-size: 16px;
+				}
+
+				p {
+					font-size: 12px;
+				}
 			}
 		}
 
@@ -323,6 +360,14 @@
 					outline: none;
 				}
 
+				.btnSubmit {
+					background: $bg-gradient-cian;
+					color: $color-white;
+					margin-top: 12px;
+					font-weight: 500;
+					cursor: pointer;
+				}
+
 				.btnSubmit:disabled {
 					color: $color-grey50;
 				}
@@ -334,16 +379,16 @@
 					color: $color-black;
 				}
 
-				.emailError {
-					border: 1px solid $color-red;
+				input:-webkit-autofill,
+				input:-webkit-autofill:hover,
+				input:-webkit-autofill:focus {
+					-webkit-text-fill-color: $color-black;
+					box-shadow: 0 0 0 0 $color-grey25 inset;
+					transition: background-color 5000s ease-in-out 0s;
 				}
 
-				.btnSubmit {
-					background: $bg-gradient-cian;
-					color: $color-white;
-					margin-top: 12px;
-					font-weight: 500;
-					cursor: pointer;
+				.emailError {
+					border: 1px solid $color-red;
 				}
 			}
 
@@ -369,20 +414,22 @@
 				text-align: center;
 				color: white;
 				display: block;
-				width: 1.6em;
-				height: 0.9em;
+				width: 32px;
+				height: 20px;
 				margin-right: 11px;
 				border: 2px solid $color-grey;
 				border-radius: 4px;
 				line-height: 90%;
+
 				@media (max-width: $small) {
-					width: 1em;
+					width: 20px;
 				}
 				@media (max-width: $xsmall) {
-					width: 1.2em;
+					width: 22px;
 				}
 				@media (max-width: 470px) {
-					width: 1.6em;
+					width: 24px;
+					height: 18px;
 				}
 			}
 
@@ -399,6 +446,11 @@
 					display: inline-block;
 					font-size: 12px;
 					line-height: 165%;
+
+					@media (max-width: $small) {
+						font-size: 10px;
+						line-height: 150%;
+					}
 				}
 			}
 
@@ -444,6 +496,11 @@
 		border-radius: 16px;
 		line-height: 165%;
 
+		h4 {
+			font-size: 14px;
+			font-weight: 700;
+		}
+
 		@media (min-width: 450px) {
 			width: 100%;
 		}
@@ -457,7 +514,16 @@
 			justify-content: flex-end;
 			border-radius: 0;
 			background: url('../img/uspacy_mobl_bg_3.png') top no-repeat;
-			background-size: 100% 100%;
+			background-size: cover;
+			background-position: center;
+
+			h4 {
+				font-size: 16px;
+			}
+
+			.text {
+				font-size: 12px;
+			}
 		}
 
 		.text {
@@ -466,12 +532,17 @@
 
 		.partnerProgramm {
 			cursor: pointer;
+			font-size: 12px;
 
 			.link {
 				display: inline-block;
 				max-width: 185px;
 				margin-right: 13px;
 				color: $color-white;
+
+				@media (min-width: $small) {
+					text-decoration: underline;
+				}
 			}
 
 			svg path {
@@ -493,10 +564,6 @@
 					display: none;
 				}
 			}
-		}
-
-		h4 {
-			font-weight: 700;
 		}
 	}
 }

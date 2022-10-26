@@ -29,6 +29,9 @@ body {
 	color: $color-black;
 	font-weight: 400;
 	font-size: 14px;
+	overflow-x: hidden;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 }
 
 ul {
@@ -43,11 +46,11 @@ a {
 .wrapper {
 	overflow: hidden;
 	min-height: 100%;
-	font-family: e-Ukraine;
+	font-family: e-Ukraine, $font-stack;
 }
 
 .container {
-	padding: 0 10px;
+	padding: 0 24px;
 	max-width: 836px;
 	margin: 0 auto;
 }

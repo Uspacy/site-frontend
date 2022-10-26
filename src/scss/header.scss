@@ -6,12 +6,14 @@
 	padding-top: 37px;
 	background-image: url('../img/main_background.png');
 	background-repeat: no-repeat;
-	background-size: 100% 100%;
-
+	background-size: cover;
+	background-position-y: center;
+	background-position-x: center;
 	min-height: 860px;
 
-	@media (max-width: $small) {
+	@media (max-width: $xsmall) {
 		background-image: url('../img/uspacy_mobl_bg1.png');
+		background-position-y: bottom;
 	}
 
 	.headerContent {
@@ -39,7 +41,6 @@
 
 		@media (max-width: $xsmall) {
 			left: 20px;
-			z-index: 100;
 			padding-right: 0;
 			width: 100%;
 		}
@@ -55,7 +56,7 @@
 		@media (max-width: $xsmall) {
 			text-align: right;
 			width: 100%;
-			margin-top: 30px;
+			margin-top: 8px;
 		}
 	}
 
@@ -68,6 +69,7 @@
 		position: relative;
 		top: -8px;
 		right: -4px;
+
 		@media (max-width: 490px) {
 			top: 0;
 		}
@@ -80,9 +82,13 @@
 			font-weight: 700;
 			font-size: 45px;
 			line-height: 110%;
+
 			@media (max-width: $small) {
-				padding-top: 350px;
 				font-size: 30px;
+			}
+
+			@media (max-width: 400px) {
+				padding-top: 220px;
 			}
 		}
 
@@ -107,6 +113,15 @@
 	.headerLastText {
 		max-width: 369px;
 		@include fw400;
+
+		span {
+			font-weight: 700;
+		}
+
+		@media (max-width: $small) {
+			font-size: 12px;
+			max-width: 100%;
+		}
 	}
 
 	.cookiesModal {
@@ -130,18 +145,22 @@
 		.cookiesModalWindow {
 			color: $color-white;
 			max-width: 620px;
+			width: 80%;
 			min-width: 320px;
 			min-height: 218px;
 			background-color: $color-magenta;
-			border-radius: 16px;
 			padding: 30px 38px;
 			position: fixed;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
 			z-index: 30;
-
 			flex-direction: column;
+
+			@media (max-width: $xsmall) {
+				border-radius: 0;
+				width: 90%;
+			}
 		}
 
 		.close {
@@ -149,9 +168,17 @@
 			right: 30px;
 			top: 30px;
 			cursor: pointer;
+
+			@media (max-width: $xsmall) {
+				right: 45px;
+			}
 		}
 
 		.useCookies {
+			@media (max-width: $xsmall) {
+				text-align: center;
+			}
+
 			.heading {
 				display: inline-block;
 				font-weight: 700;
@@ -159,6 +186,12 @@
 				line-height: 150%;
 				margin-left: 20px;
 				transform: translateY(-5px);
+
+				@media (max-width: $xsmall) {
+					display: block;
+					text-align: center;
+					margin-top: 27px;
+				}
 			}
 		}
 
@@ -168,16 +201,48 @@
 			line-height: 160%;
 			margin: 20px 0 40px;
 			max-width: 520px;
+
+			@media (max-width: $xsmall) {
+				text-align: center;
+			}
 		}
 
 		.cookiesModalBtns {
-			max-width: 80%;
-			@include flex;
+			display: grid;
+			grid-template-areas:
+				'one two three'
+				'four five six';
+			align-items: center;
+			justify-items: center;
+			row-gap: 20px;
+
+			a {
+				text-decoration: underline;
+				color: $color-white;
+			}
+
+			.reject {
+				grid-area: four;
+				cursor: pointer;
+				text-decoration: underline;
+			}
 
 			.accept {
+				grid-area: five;
+				max-width: 138px;
 				padding: 12px 40px;
 				border: 2px solid $color-white;
 				border-radius: 50px;
+				text-align: center;
+				cursor: pointer;
+
+				@media (max-width: $xsmall) {
+					grid-area: two;
+				}
+			}
+
+			.police {
+				grid-area: six;
 				cursor: pointer;
 			}
 		}

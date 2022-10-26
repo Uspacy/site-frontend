@@ -1,10 +1,10 @@
-$color-white: #ffffff;
+$color-white: #fff;
 $color-cian: #13d9f8;
 $color-rosa: #e31da9;
 $color-red: red;
 $color-magenta: #4238e5;
-$color-magenta10: rgba(66, 56, 229, 10%);
-$color-blue: #0033ff;
+$color-magenta10: rgba(66, 56, 229, 0.1);
+$color-blue: #03f;
 $color-deep-blue: #2a18f1;
 $color-black: #101010;
 $color-grey: #cfd1e8;
@@ -12,7 +12,6 @@ $color-grey50: rgba(207, 209, 232, 0.5);
 $color-grey25: rgba(207, 209, 232, 0.25);
 $color-deep-grey: #979ac7;
 $color-yellow: #ffd00d;
-
 $color-overlay: rgba(16, 16, 16, 0.9);
 
 $gradient-blue: linear-gradient(145.98deg, #13d9f8 17.41%, #4238e5 82.58%);
@@ -37,7 +36,6 @@ $media: 1024px;
 	border-radius: 50px;
 	font-weight: 500;
 	font-size: 14px;
-	line-height: 17px;
 
 	a {
 		color: $color-white;
@@ -49,7 +47,7 @@ $media: 1024px;
 @mixin fw400 {
 	font-weight: 400;
 	font-size: 14px;
-	line-height: 165%;
+	line-height: 23px;
 }
 
 @mixin flex {

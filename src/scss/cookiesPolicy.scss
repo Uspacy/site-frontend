@@ -1,9 +1,16 @@
+$font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
+
 .cookiesWrapper {
 	max-width: 820px;
 	margin: 0 auto;
 	padding-top: 40px;
 	line-height: 165%;
-	font-family: 'e-Ukraine';
+	font-family: e-Ukraine, $font-stack;
+
+	@media (max-width: $media) {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
 
 	.mainContent {
 		& ul {
@@ -22,12 +29,21 @@
 		& li:not(:last-child) {
 			margin-bottom: 8px;
 		}
+
+		& ul ~ p {
+			margin-top: 12px;
+		}
 	}
 
 	.cookiesHeader {
 		@include flex;
 
 		margin-top: 92px;
+
+		@media (max-width: $xsmall) {
+			flex-direction: column;
+			margin-bottom: 30px;
+		}
 
 		h2 {
 			font-weight: 700;
@@ -100,14 +116,16 @@
 		.title {
 			font-weight: 700;
 			display: none;
-			margin-right: 10%;
+			margin-right: 30px;
+
 			@media (max-width: $small) {
 				display: inline;
+				min-width: 30%;
 			}
 		}
 
 		.name {
-			width: 14%;
+			width: 20%;
 		}
 
 		.provider {

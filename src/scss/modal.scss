@@ -23,7 +23,7 @@
 		min-height: 500px;
 		background-color: $color-magenta;
 		border-radius: 16px;
-		padding: 54px 10px;
+		padding: 54px 64px;
 		position: fixed;
 		top: 50%;
 		left: 50%;
@@ -40,14 +40,23 @@
 		}
 	}
 
-	.modalContent {
+	.logoClose {
 		display: flex;
-		justify-content: center;
+		justify-content: flex-end;
 		align-items: center;
-		min-height: 630px;
+		width: 100%;
 
 		@media (max-width: $xsmall) {
-			min-height: 85vh;
+			justify-content: space-between;
+			max-width: 90%;
+		}
+	}
+
+	.logo {
+		display: none;
+
+		@media (max-width: $xsmall) {
+			display: block;
 		}
 	}
 
@@ -56,6 +65,22 @@
 		right: 30px;
 		top: 30px;
 		cursor: pointer;
+
+		@media (max-width: $xsmall) {
+			position: static;
+		}
+	}
+
+	.modalContent {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		max-width: 90%;
+		min-height: 630px;
+
+		@media (max-width: $xsmall) {
+			min-height: 85vh;
+		}
 	}
 
 	.modalFirstKnow {
@@ -65,7 +90,7 @@
 		align-items: center;
 
 		.leftBlock {
-			width: 47%;
+			text-align: center;
 
 			.h2 {
 				font-weight: 700;
@@ -79,7 +104,7 @@
 		}
 
 		.rightBlock {
-			width: 43%;
+			margin-top: 30px;
 
 			.modalForm {
 				@include flex;
@@ -95,6 +120,15 @@
 					outline: none;
 				}
 
+				.btnSubmit {
+					background: inherit;
+					color: $color-white;
+					border: 2px solid $color-white;
+					margin-top: 12px;
+					font-weight: 500;
+					cursor: pointer;
+				}
+
 				.btnSubmit:disabled {
 					color: $color-grey50;
 				}
@@ -106,6 +140,14 @@
 					color: $color-white;
 				}
 
+				input:-webkit-autofill,
+				input:-webkit-autofill:hover,
+				input:-webkit-autofill:focus {
+					-webkit-text-fill-color: $color-white;
+					box-shadow: 0 0 0 0 $color-grey25 inset; // eslint-disable-line
+					transition: background-color 5000s ease-in-out 0s;
+				}
+
 				.email::placeholder {
 					color: $color-white;
 				}
@@ -113,22 +155,13 @@
 				.emailError {
 					border: 1px solid $color-red;
 				}
-
-				.btnSubmit {
-					background: inherit;
-					color: $color-white;
-					border: 2px solid $color-white;
-					margin-top: 12px;
-					font-weight: 500;
-					cursor: pointer;
-				}
 			}
 
 			.checkBox {
 				display: flex;
 				justify-content: space-between;
 				align-items: flex-start;
-				margin-top: 17px;
+				margin-top: 30px;
 			}
 
 			#modal-consent {
@@ -141,8 +174,8 @@
 				text-align: center;
 				color: $color-magenta;
 				display: block;
-				width: 1.6em;
-				height: 0.9em;
+				width: 1em;
+				height: 1em;
 				margin-right: 11px;
 				border: 2px solid $color-grey;
 				border-radius: 4px;
@@ -206,7 +239,8 @@
 		}
 	}
 
-	.unvisible {
+	.modalFirstKnow.unvisible,
+	.modalSuccess.unvisible {
 		display: none;
 	}
 }
