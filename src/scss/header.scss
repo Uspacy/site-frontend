@@ -6,11 +6,15 @@
 	padding-top: 37px;
 	background-image: url('../img/main_background.png');
 	background-repeat: no-repeat;
-	background-size: 100% 100%;
-
+	background-size: cover;
+	background-position-y: center;
+	background-position-x: center;
 	min-height: 860px;
 
-	@media (max-width: $small) {
+	@media (max-width: $media) {
+	}
+
+	@media (max-width: $xsmall) {
 		background-image: url('../img/uspacy_mobl_bg1.png');
 	}
 
@@ -54,7 +58,7 @@
 		@media (max-width: $xsmall) {
 			text-align: right;
 			width: 100%;
-			margin-top: 30px;
+			margin-top: 8px;
 		}
 	}
 
@@ -67,6 +71,7 @@
 		position: relative;
 		top: -8px;
 		right: -4px;
+
 		@media (max-width: 490px) {
 			top: 0;
 		}
@@ -79,9 +84,13 @@
 			font-weight: 700;
 			font-size: 45px;
 			line-height: 110%;
+
 			@media (max-width: $small) {
-				padding-top: 350px;
 				font-size: 30px;
+			}
+
+			@media (max-width: $xsmall) {
+				padding-top: 220px;
 			}
 		}
 
