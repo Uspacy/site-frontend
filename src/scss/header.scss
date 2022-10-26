@@ -9,7 +9,7 @@
 	background-size: cover;
 	background-position-y: center;
 	background-position-x: center;
-	min-height: 860px;
+	min-height: 980px;
 
 	@media (max-width: $xsmall) {
 		background-image: url('../img/uspacy_mobl_bg1.png');
@@ -18,7 +18,7 @@
 
 	.headerContent {
 		height: 100%;
-		min-height: 860px;
+		min-height: 980px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
