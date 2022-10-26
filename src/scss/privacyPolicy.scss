@@ -5,6 +5,11 @@
 	line-height: 165%;
 	font-family: 'e-Ukraine';
 
+	@media (max-width: $media) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
 	.mainContent {
 		& ul {
 			padding-left: 14px;
@@ -18,6 +23,7 @@
 				color: $color-black;
 			}
 		}
+
 		& li:not(:last-child) {
 			margin-bottom: 8px;
 		}
@@ -30,6 +36,11 @@
 			@include flex;
 
 			margin-top: 92px;
+
+			@media (max-width: $xsmall) {
+				flex-direction: column;
+				margin-bottom: 30px;
+			}
 
 			h2 {
 				font-weight: 700;

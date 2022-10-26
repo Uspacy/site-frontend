@@ -23,7 +23,7 @@
 		min-height: 500px;
 		background-color: $color-magenta;
 		border-radius: 16px;
-		padding: 54px 10px;
+		padding: 54px 64px;
 		position: fixed;
 		top: 50%;
 		left: 50%;
@@ -44,6 +44,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		max-width: 90%;
 		min-height: 630px;
 
 		@media (max-width: $xsmall) {
@@ -56,6 +57,11 @@
 		right: 30px;
 		top: 30px;
 		cursor: pointer;
+
+		@media (max-width: $xsmall) {
+			right: 90px;
+			top: 50px;
+		}
 	}
 
 	.modalFirstKnow {
@@ -65,7 +71,7 @@
 		align-items: center;
 
 		.leftBlock {
-			width: 47%;
+			text-align: center;
 
 			.h2 {
 				font-weight: 700;
@@ -79,7 +85,7 @@
 		}
 
 		.rightBlock {
-			width: 43%;
+			margin-top: 30px;
 
 			.modalForm {
 				@include flex;
@@ -106,6 +112,14 @@
 					color: $color-white;
 				}
 
+				input:-webkit-autofill,
+				input:-webkit-autofill:hover,
+				input:-webkit-autofill:focus {
+					-webkit-text-fill-color: $color-white;
+					-webkit-box-shadow: 0 0 0px 0px $color-grey25 inset;
+					transition: background-color 5000s ease-in-out 0s;
+				}
+
 				.email::placeholder {
 					color: $color-white;
 				}
@@ -128,7 +142,7 @@
 				display: flex;
 				justify-content: space-between;
 				align-items: flex-start;
-				margin-top: 17px;
+				margin-top: 30px;
 			}
 
 			#modal-consent {
@@ -141,8 +155,8 @@
 				text-align: center;
 				color: $color-magenta;
 				display: block;
-				width: 1.6em;
-				height: 0.9em;
+				width: 1em;
+				height: 1em;
 				margin-right: 11px;
 				border: 2px solid $color-grey;
 				border-radius: 4px;
@@ -206,7 +220,8 @@
 		}
 	}
 
-	.unvisible {
+	.modalFirstKnow.unvisible,
+	.modalSuccess.unvisible {
 		display: none;
 	}
 }

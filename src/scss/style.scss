@@ -29,6 +29,10 @@ body {
 	color: $color-black;
 	font-weight: 400;
 	font-size: 14px;
+
+	overflow-x: hidden;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
 }
 
 ul {

@@ -11,11 +11,9 @@
 	background-position-x: center;
 	min-height: 860px;
 
-	@media (max-width: $media) {
-	}
-
 	@media (max-width: $xsmall) {
 		background-image: url('../img/uspacy_mobl_bg1.png');
+		background-position-y: bottom;
 	}
 
 	.headerContent {
@@ -89,7 +87,7 @@
 				font-size: 30px;
 			}
 
-			@media (max-width: $xsmall) {
+			@media (max-width: 400px) {
 				padding-top: 220px;
 			}
 		}
@@ -142,7 +140,6 @@
 			min-width: 320px;
 			min-height: 218px;
 			background-color: $color-magenta;
-			border-radius: 16px;
 			padding: 30px 38px;
 			position: fixed;
 			top: 50%;

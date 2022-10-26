@@ -5,7 +5,7 @@ function main() {
 	// cookies modal
 	const cookiesModal = document.querySelector('.js-cookies-modal');
 	const closeCookiesModalButton = document.querySelector('.js-cookies-modal-close');
-	const cookiesOverlay = cookiesModal.querySelector('.js-overlay');
+	const cookiesOverlay = cookiesModal?.querySelector('.js-overlay');
 
 	function closeCookiesModal(event) {
 		event.preventDefault();
@@ -14,15 +14,15 @@ function main() {
 	}
 
 	closeCookiesModalButton?.addEventListener('click', closeCookiesModal);
-	cookiesOverlay.addEventListener('click', closeCookiesModal);
-	cookiesModal.querySelector('.js-accept')?.addEventListener('click', closeCookiesModal);
+	cookiesOverlay?.addEventListener('click', closeCookiesModal);
+	cookiesModal?.querySelector('.js-accept')?.addEventListener('click', closeCookiesModal);
 
 	// modal
 	const modalButtons = document.querySelectorAll('.js-open-modal');
 	const closeButton = document.querySelector('.js-modal-close');
 	const backButton = document.querySelector('.js-modal-back');
 	const modalElem = document.querySelector('.js-modal');
-	const overlay = modalElem.querySelector('.js-overlay');
+	const overlay = modalElem?.querySelector('.js-overlay');
 
 	const firstKnow = document.querySelector('.js-modal-first-know');
 	const modalSuccess = document.querySelector('.js-modal-success');
