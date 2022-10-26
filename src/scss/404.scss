@@ -1,8 +1,10 @@
+$font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
+
 .wrapper404 {
 	margin: 0 auto;
 	padding-top: 40px;
 	line-height: 165%;
-	font-family: 'e-Ukraine';
+	font-family: e-Ukraine, $font-stack;
 	height: 100vh;
 	width: 100%;
 	display: flex;

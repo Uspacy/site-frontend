@@ -1,6 +1,8 @@
+$font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
+
 .mainContent {
 	margin-top: 20px;
-	font-family: 'e-Ukraine';
+	font-family: e-Ukraine, $font-stack;
 
 	.textBlock {
 		display: grid;
@@ -189,8 +191,8 @@
 				cursor: pointer;
 			}
 
-			.leftArrow.js-disable,
-			.rightArrow.js-disable {
+			.leftArrow.jsDisable,
+			.rightArrow.jsDisable {
 				opacity: 0;
 				display: none;
 			}
@@ -376,6 +378,7 @@
 				input:-webkit-autofill:hover,
 				input:-webkit-autofill:focus {
 					-webkit-text-fill-color: $color-black;
+
 					-webkit-box-shadow: 0 0 0px 0px $color-grey25 inset;
 					transition: background-color 5000s ease-in-out 0s;
 				}

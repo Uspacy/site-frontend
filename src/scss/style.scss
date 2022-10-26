@@ -29,7 +29,6 @@ body {
 	color: $color-black;
 	font-weight: 400;
 	font-size: 14px;
-
 	overflow-x: hidden;
 	-ms-overflow-style: none;
 	scrollbar-width: none;
@@ -47,7 +46,7 @@ a {
 .wrapper {
 	overflow: hidden;
 	min-height: 100%;
-	font-family: e-Ukraine;
+	font-family: e-Ukraine, $font-stack;
 }
 
 .container {
