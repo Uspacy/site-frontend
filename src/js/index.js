@@ -182,14 +182,16 @@ function main() {
 				return;
 			}
 
-			const url = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSePNhSya-JPbAQHCN91X95hJRVfaitw8x25yjfQM5Qs_vH47w/formResponse';
+			const url = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSePNhSya-JPbAQHCN91X95hJRVfaitw8x25yjfQM5Qs_vH47w/formResponse?&submit=Submit';
 			const formData = new FormData();
 			formData.append('entry.568783889', email.value);
 			const response = await fetch(url, {
 				method: 'POST',
 				body: formData,
+				mode: 'no-cors',
 			});
-			if (response.ok) {
+			// if (response.ok)
+			if (response) {
 				// eslint-disable-next-line no-invalid-this
 				if (this.classList.contains('jsModalForm')) {
 					showHideModalSuccess();
