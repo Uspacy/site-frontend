@@ -187,9 +187,6 @@ function main() {
 			formData.append('entry.568783889', email.value);
 			const response = await fetch(url, {
 				method: 'POST',
-				headers: {
-					headers: { 'Content-Type': 'multipart/form-data' },
-				},
 				body: formData,
 			});
 			if (response.ok) {
@@ -207,8 +204,8 @@ function main() {
 			// eslint-disable-next-line no-invalid-this
 			this.reset();
 		} catch (err) {
-			console.log('Виникла помилка при відправці email!');
-			console.log(err);
+			// console.log('Виникла помилка при відправці email!');
+			// console.log(err);
 		}
 	}
 

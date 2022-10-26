@@ -47,6 +47,7 @@
 	}
 
 	.createText {
+		width: 173px;
 		font-style: normal;
 		font-weight: 500;
 		font-size: 11px;
@@ -67,11 +68,14 @@
 		height: 16px;
 		background-image: url('../img/flag.png');
 		position: relative;
-		top: -8px;
-		right: -4px;
 
-		@media (max-width: 490px) {
-			top: 0;
+		@media (min-width: $xsmall) {
+			top: -26px;
+			right: -75px;
+		}
+
+		@media (max-width: $xsmall) {
+			top: -4px;
 		}
 	}
 
