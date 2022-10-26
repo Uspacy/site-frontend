@@ -188,6 +188,7 @@ function main() {
 			const response = await fetch(url, {
 				method: 'POST',
 				body: formData,
+				mode: 'no-cors',
 			});
 			if (response.ok) {
 				// eslint-disable-next-line no-invalid-this
