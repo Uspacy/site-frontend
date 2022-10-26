@@ -47,36 +47,37 @@
 	}
 
 	.createText {
-		width: 173px;
 		font-style: normal;
 		font-weight: 500;
 		font-size: 11px;
 		line-height: 120%;
 		color: $color-white;
 
+		span {
+			display: inline-block;
+			width: 173px;
+		}
+
 		@media (max-width: $xsmall) {
-			text-align: right;
 			width: 100%;
 			margin-top: 8px;
+			display: flex;
+			justify-content: flex-end;
 		}
 	}
 
-	.createText::after {
+	.createText span::after {
 		content: '';
 		display: inline-block;
 		width: 16px;
 		height: 16px;
 		background-image: url('../img/flag.png');
 		position: relative;
-
-		@media (min-width: $xsmall) {
-			top: -26px;
-			right: -75px;
-		}
+		top: -26px;
+		right: -75px;
 
 		@media (max-width: $xsmall) {
-			top: -5px;
-			right: -2px;
+			top: -22px;
 		}
 	}
 
@@ -112,6 +113,15 @@
 
 		.btnNotify {
 			@include notifyMe;
+
+			@media (max-width: 340px) {
+				width: 280px;
+				margin-right: 10px;
+
+				a {
+					padding: 17px 20px;
+				}
+			}
 		}
 	}
 
