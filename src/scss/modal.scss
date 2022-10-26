@@ -109,6 +109,7 @@
 			.modalForm {
 				@include flex;
 
+				width: 100%;
 				flex-direction: column-reverse;
 
 				.email,
@@ -118,6 +119,10 @@
 					border-radius: 50px;
 					border: none;
 					outline: none;
+
+					@media (max-width: 340px) {
+						width: 280px;
+					}
 				}
 
 				.btnSubmit {

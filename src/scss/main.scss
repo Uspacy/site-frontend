@@ -117,6 +117,15 @@ $font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
 		@media (max-width: $small) {
 			font-size: 12px;
 		}
+
+		@media (max-width: 340px) {
+			width: 280px;
+			margin-right: 10px;
+
+			a {
+				padding: 17px 20px;
+			}
+		}
 	}
 
 	.menu {
@@ -346,7 +355,7 @@ $font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
 
 			.form {
 				position: absolute;
-
+				width: 100%;
 				@include flex;
 
 				flex-direction: column-reverse;
@@ -366,6 +375,10 @@ $font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
 					margin-top: 12px;
 					font-weight: 500;
 					cursor: pointer;
+
+					@media (max-width: 340px) {
+						width: 280px;
+					}
 				}
 
 				.btnSubmit:disabled {
@@ -377,6 +390,10 @@ $font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
 					text-align: center;
 					font-size: 12px;
 					color: $color-black;
+
+					@media (max-width: 340px) {
+						width: 280px;
+					}
 				}
 
 				input:-webkit-autofill,
@@ -563,6 +580,11 @@ $font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
 				svg {
 					display: none;
 				}
+			}
+
+			@media (max-width: 340px) {
+				width: 280px;
+				margin-right: 15px;
 			}
 		}
 	}

@@ -12,6 +12,11 @@ $font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
 		padding-right: 24px;
 	}
 
+	@media (max-width: 340px) {
+		padding-left: 14px;
+		padding-right: 14px;
+	}
+
 	.mainContent {
 		& ul {
 			padding-left: 14px;

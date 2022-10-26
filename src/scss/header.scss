@@ -113,6 +113,15 @@
 
 		.btnNotify {
 			@include notifyMe;
+
+			@media (max-width: 340px) {
+				width: 280px;
+				margin-right: 10px;
+
+				a {
+					padding: 17px 20px;
+				}
+			}
 		}
 	}
 
