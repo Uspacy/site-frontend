@@ -40,15 +40,23 @@
 		}
 	}
 
-	.modalContent {
+	.logoClose {
 		display: flex;
-		justify-content: center;
+		justify-content: flex-end;
 		align-items: center;
-		max-width: 90%;
-		min-height: 630px;
+		width: 100%;
 
 		@media (max-width: $xsmall) {
-			min-height: 85vh;
+			justify-content: space-between;
+			max-width: 90%;
+		}
+	}
+
+	.logo {
+		display: none;
+
+		@media (max-width: $xsmall) {
+			display: block;
 		}
 	}
 
@@ -59,8 +67,19 @@
 		cursor: pointer;
 
 		@media (max-width: $xsmall) {
-			right: 90px;
-			top: 50px;
+			position: static;
+		}
+	}
+
+	.modalContent {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		max-width: 90%;
+		min-height: 630px;
+
+		@media (max-width: $xsmall) {
+			min-height: 85vh;
 		}
 	}
 
