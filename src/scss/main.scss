@@ -416,6 +416,18 @@
 					}
 				}
 
+				.email.blurSucces {
+					color: $color-magenta !important;
+				}
+
+				.email:hover {
+					background: $color-magenta10;
+				}
+
+				.email::placeholder {
+					color: $color-black;
+				}
+
 				input:-webkit-autofill,
 				input:-webkit-autofill:hover,
 				input:-webkit-autofill:focus {
