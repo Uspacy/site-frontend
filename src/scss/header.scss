@@ -11,6 +11,11 @@
 	background-position-x: center;
 	min-height: 980px;
 
+	@media (min-width: 1900px) {
+		background-position-y: bottom;
+		min-height: 1280px;
+	}
+
 	@media (max-width: $xsmall) {
 		background-image: url('../img/uspacy_mobl_bg1.png');
 		background-position-y: bottom;
@@ -116,13 +121,10 @@
 		.btnNotify {
 			@include notifyMe;
 
-			@media (max-width: 340px) {
-				width: 265px;
-				margin-right: 10px;
-
-				a {
-					padding: 17px 20px;
-				}
+			@media (max-width: $small) {
+				width: 272px;
+				height: 54px;
+				font-size: 12px;
 			}
 		}
 	}
