@@ -205,7 +205,8 @@ function main() {
 			// eslint-disable-next-line no-invalid-this
 			this.reset();
 		} catch (err) {
-			// console.log('Виникла помилка при відправці email!');
+			// eslint-disable-next-line
+			console.log('Виникла помилка при відправці email!');
 			// eslint-disable-next-line
 			console.log(err);
 		}
