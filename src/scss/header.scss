@@ -120,6 +120,7 @@
 
 		.btnNotify {
 			@include notifyMe;
+
 			cursor: pointer;
 
 			a {
