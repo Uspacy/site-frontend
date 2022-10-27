@@ -204,21 +204,20 @@
 			}
 
 			.checkBox label::before {
-				content: '\2713';
-				font-size: 18px;
+				content: '';
+				background: url('../img/notCheckedWhiteIcon.png') no-repeat center;
 				text-align: center;
-				color: $color-magenta;
 				display: block;
-				width: 1em;
-				height: 1em;
+				padding: 2px;
+				width: 30px;
+				height: 22px;
+				box-sizing: content-box;
 				margin-right: 11px;
-				border: 2px solid $color-grey;
-				border-radius: 4px;
-				line-height: 90%;
+				z-index: 10;
 			}
 
 			#modal-consent:checked ~ label::before {
-				color: $color-white;
+				background: url('../img/checkedWhiteIcon.png') no-repeat center;
 			}
 
 			.label {
