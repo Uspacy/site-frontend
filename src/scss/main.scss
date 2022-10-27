@@ -492,7 +492,7 @@ $font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
 				text-align: center;
 				line-height: 23.1px;
 
-				@media (max-width: $xsmall) {
+				@media (max-width: $small) {
 					font-size: 12px;
 				}
 			}

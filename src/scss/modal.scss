@@ -234,13 +234,21 @@
 
 		.successHeading {
 			font-weight: 700;
-			font-size: 16px;
+			font-size: 24px;
 			line-height: 150%;
 			margin: 13px 0 24px;
+
+			@media (max-width: $small) {
+				font-size: 16px;
+			}
 		}
 
 		.successText {
 			max-width: 270px;
+
+			@media (max-width: $small) {
+				font-size: 12px;
+			}
 		}
 	}
 
