@@ -190,7 +190,6 @@ function main() {
 				body: formData,
 				mode: 'no-cors',
 			});
-			// if (response.ok)
 			if (response) {
 				// eslint-disable-next-line no-invalid-this
 				if (this.classList.contains('jsModalForm')) {
@@ -207,7 +206,8 @@ function main() {
 			this.reset();
 		} catch (err) {
 			// console.log('Виникла помилка при відправці email!');
-			// console.log(err);
+			// eslint-disable-next-line
+			console.log(err);
 		}
 	}
 
