@@ -139,6 +139,11 @@
 					color: $color-grey50;
 				}
 
+				.btnSubmit:hover:not(:disabled) {
+					background: $color-white;
+					color: $color-magenta;
+				}
+
 				.email {
 					background: $color-grey25;
 					text-align: center;

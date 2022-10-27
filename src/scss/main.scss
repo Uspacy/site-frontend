@@ -115,11 +115,29 @@
 	.btnNotify {
 		@include notifyMe;
 
+		cursor: pointer;
+
+		a {
+			display: flex;
+			width: 100%;
+			height: 100%;
+			align-items: center;
+			justify-content: center;
+		}
+
 		@media (max-width: $small) {
 			width: 272px;
 			height: 54px;
 			font-size: 12px;
 		}
+	}
+
+	.btnNotify:hover {
+		background-color: $color-white;
+	}
+
+	.btnNotify:hover .link {
+		color: $color-magenta;
 	}
 
 	.menu {
@@ -381,6 +399,10 @@
 					color: $color-grey50;
 				}
 
+				.btnSubmit:hover:not(:disabled) {
+					background: $bg-gradien-ciant-hover50, $bg-gradien-ciant-hover95;
+				}
+
 				.email {
 					background: $color-grey25;
 					text-align: center;
@@ -560,7 +582,6 @@
 			.link {
 				display: inline-block;
 				max-width: 185px;
-				margin-right: 13px;
 				color: $color-white;
 
 				@media (min-width: $small) {
@@ -583,6 +604,22 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
+
+				a.link {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					width: 100%;
+					height: 100%;
+				}
+
+				&:hover {
+					background-color: $color-white;
+
+					a {
+						color: $color-word-grey25;
+					}
+				}
 
 				span,
 				svg {
