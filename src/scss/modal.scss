@@ -2,6 +2,7 @@
 	opacity: 0;
 	visibility: hidden;
 	transition: 0.5s all;
+	font-family: e-Ukraine;
 
 	.overlay {
 		position: fixed;
@@ -33,10 +34,26 @@
 
 		flex-direction: column;
 
+		@media (max-height: 400px) {
+			min-height: auto;
+		}
+
 		@media (max-width: $xsmall) {
 			min-height: 92vh;
 			width: 100vw;
 			border-radius: 0;
+		}
+
+		@media (max-height: 600px) {
+			min-height: auto;
+
+			.backWrapper {
+				display: none;
+			}
+
+			.rightBlock {
+				margin-top: 30px;
+			}
 		}
 	}
 
@@ -69,6 +86,10 @@
 		@media (max-width: $xsmall) {
 			position: static;
 		}
+
+		@media (max-height: 600px) {
+			top: 50px;
+		}
 	}
 
 	.modalContent {
@@ -78,7 +99,7 @@
 		max-width: 90%;
 		min-height: 630px;
 
-		@media (max-width: $xsmall) {
+		@media (max-height: 630px) {
 			min-height: 85vh;
 		}
 	}
@@ -138,11 +159,20 @@
 					color: $color-grey50;
 				}
 
+				.btnSubmit:hover:not(:disabled) {
+					background: $color-white;
+					color: $color-magenta;
+				}
+
 				.email {
 					background: $color-grey25;
 					text-align: center;
 					font-size: 12px;
 					color: $color-white;
+				}
+
+				.email:hover {
+					background: $color-grey50;
 				}
 
 				input:-webkit-autofill,
@@ -174,21 +204,20 @@
 			}
 
 			.checkBox label::before {
-				content: '\2713';
-				font-size: 18px;
+				content: '';
+				background: url('../img/notCheckedWhiteIcon.png') no-repeat center;
 				text-align: center;
-				color: $color-magenta;
 				display: block;
-				width: 1em;
-				height: 1em;
+				padding: 2px;
+				width: 30px;
+				height: 22px;
+				box-sizing: content-box;
 				margin-right: 11px;
-				border: 2px solid $color-grey;
-				border-radius: 4px;
-				line-height: 90%;
+				z-index: 10;
 			}
 
 			#modal-consent:checked ~ label::before {
-				color: $color-white;
+				background: url('../img/checkedWhiteIcon.png') no-repeat center;
 			}
 
 			.label {
@@ -214,10 +243,10 @@
 		text-align: center;
 		margin-top: 47px;
 		position: absolute;
-		bottom: 30px;
+		bottom: 50px;
 
 		@media (max-width: $xsmall) {
-			bottom: 10%;
+			bottom: 70px;
 		}
 	}
 
@@ -234,13 +263,21 @@
 
 		.successHeading {
 			font-weight: 700;
-			font-size: 16px;
+			font-size: 24px;
 			line-height: 150%;
 			margin: 13px 0 24px;
+
+			@media (max-width: $small) {
+				font-size: 16px;
+			}
 		}
 
 		.successText {
 			max-width: 270px;
+
+			@media (max-width: $small) {
+				font-size: 12px;
+			}
 		}
 	}
 

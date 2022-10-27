@@ -146,20 +146,52 @@ function main() {
 	const consent = document.querySelector('#consent');
 	const modalConsent = document.querySelector('#modal-consent');
 
-	function changeCheckbox(event) {
-		// eslint-disable-next-line no-invalid-this
-		const btnSubmit = this.parentElement.parentElement.querySelector('.btnSubmit');
-		// eslint-disable-next-line no-invalid-this
-		if (btnSubmit) btnSubmit.disabled = !this.checked;
-	}
-
-	consent?.addEventListener('change', changeCheckbox);
-	modalConsent?.addEventListener('change', changeCheckbox);
-
-	// form
 	const form = document.querySelector('.jsForm');
 	const modalForm = document.querySelector('.jsModalForm');
 	const successWindow = document.querySelector('.jsSuccessWindow');
+	const email = form?.querySelector('.email');
+	const modalEmail = modalForm?.querySelector('.email');
+
+	function changeCheckboxEmail(event) {
+		// eslint-disable-next-line no-invalid-this
+		const btnSubmit = this.parentElement.parentElement.querySelector('.btnSubmit');
+		// eslint-disable-next-line no-invalid-this
+		if (btnSubmit) btnSubmit.disabled = !this.checked || !emailPattern.test(email?.value);
+	}
+
+	function changeCheckboxModalEmail(event) {
+		// eslint-disable-next-line no-invalid-this
+		const btnSubmit = this.parentElement.parentElement.querySelector('.btnSubmit');
+		// eslint-disable-next-line no-invalid-this
+		if (btnSubmit) btnSubmit.disabled = !this.checked || !emailPattern.test(modalEmail?.value);
+	}
+
+	consent?.addEventListener('change', changeCheckboxEmail);
+	modalConsent?.addEventListener('change', changeCheckboxModalEmail);
+
+	// form
+
+	email?.addEventListener('focusout', () => {
+		if (emailPattern.test(email?.value)) {
+			email?.classList.add('blurSucces');
+		}
+	});
+
+	email?.addEventListener('focus', () => email?.classList.remove('blurSucces'));
+
+	email?.addEventListener('input', () => {
+		const btn = form.querySelector('.btnSubmit');
+		if (btn && emailPattern.test(email?.value) && consent.checked) {
+			btn.disabled = false;
+		} else btn.disabled = true;
+	});
+
+	modalEmail?.addEventListener('input', () => {
+		const btn = modalForm.querySelector('.btnSubmit');
+		if (btn && emailPattern.test(modalEmail?.value) && modalConsent.checked) {
+			btn.disabled = false;
+		} else btn.disabled = true;
+	});
 
 	function showHideSuccess() {
 		successWindow?.classList.toggle('unvisible');
@@ -176,21 +208,20 @@ function main() {
 		try {
 			event.preventDefault();
 			// eslint-disable-next-line no-invalid-this
-			const email = this.querySelector('.email');
-			if (email?.value.length < 2 || !emailPattern.test(email?.value)) {
-				email.classList.add('emailError');
+			const emailElement = this.querySelector('.email');
+			if (emailElement?.value.length < 2 || !emailPattern.test(emailElement?.value)) {
+				emailElement.classList.add('emailError');
 				return;
 			}
 
 			const url = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSePNhSya-JPbAQHCN91X95hJRVfaitw8x25yjfQM5Qs_vH47w/formResponse?&submit=Submit';
 			const formData = new FormData();
-			formData.append('entry.568783889', email.value);
+			formData.append('entry.568783889', emailElement?.value);
 			const response = await fetch(url, {
 				method: 'POST',
 				body: formData,
 				mode: 'no-cors',
 			});
-			// if (response.ok)
 			if (response) {
 				// eslint-disable-next-line no-invalid-this
 				if (this.classList.contains('jsModalForm')) {
@@ -206,8 +237,10 @@ function main() {
 			// eslint-disable-next-line no-invalid-this
 			this.reset();
 		} catch (err) {
-			// console.log('Виникла помилка при відправці email!');
-			// console.log(err);
+			// eslint-disable-next-line
+			console.log('Виникла помилка при відправці email!');
+			// eslint-disable-next-line
+			console.log(err);
 		}
 	}
 

@@ -1,7 +1,7 @@
 @import './var.scss';
 
 .header {
-	box-sizing: content-box;
+	font-family: e-Ukraine;
 	width: 100%;
 	padding-top: 37px;
 	background-image: url('../img/main_background.png');
@@ -10,6 +10,11 @@
 	background-position-y: center;
 	background-position-x: center;
 	min-height: 980px;
+
+	@media (min-width: 1900px) {
+		background-position-y: bottom;
+		min-height: 1280px;
+	}
 
 	@media (max-width: $xsmall) {
 		background-image: url('../img/uspacy_mobl_bg1.png');
@@ -116,14 +121,29 @@
 		.btnNotify {
 			@include notifyMe;
 
-			@media (max-width: 340px) {
-				width: 265px;
-				margin-right: 10px;
+			cursor: pointer;
 
-				a {
-					padding: 17px 20px;
-				}
+			a {
+				display: flex;
+				width: 100%;
+				height: 100%;
+				align-items: center;
+				justify-content: center;
 			}
+
+			@media (max-width: $small) {
+				width: 272px;
+				height: 54px;
+				font-size: 12px;
+			}
+		}
+
+		.btnNotify:hover {
+			background-color: $color-white;
+		}
+
+		.btnNotify:hover a {
+			color: $color-magenta;
 		}
 	}
 
@@ -224,45 +244,45 @@
 			}
 		}
 
-		.cookiesModalBtns {
-			display: grid;
-			grid-template-areas:
-				'one two three'
-				'four five six';
-			align-items: center;
-			justify-items: center;
-			row-gap: 20px;
+		// .cookiesModalBtns {
+		// 	display: grid;
+		// 	grid-template-areas:
+		// 		'one two three'
+		// 		'four five six';
+		// 	align-items: center;
+		// 	justify-items: center;
+		// 	row-gap: 20px;
 
-			a {
-				text-decoration: underline;
-				color: $color-white;
-			}
+		// 	a {
+		// 		text-decoration: underline;
+		// 		color: $color-white;
+		// 	}
 
-			.reject {
-				grid-area: four;
-				cursor: pointer;
-				text-decoration: underline;
-			}
+		// 	.reject {
+		// 		grid-area: four;
+		// 		cursor: pointer;
+		// 		text-decoration: underline;
+		// 	}
 
-			.accept {
-				grid-area: five;
-				max-width: 138px;
-				padding: 12px 40px;
-				border: 2px solid $color-white;
-				border-radius: 50px;
-				text-align: center;
-				cursor: pointer;
+		// 	.accept {
+		// 		grid-area: five;
+		// 		max-width: 138px;
+		// 		padding: 12px 40px;
+		// 		border: 2px solid $color-white;
+		// 		border-radius: 50px;
+		// 		text-align: center;
+		// 		cursor: pointer;
 
-				@media (max-width: $xsmall) {
-					grid-area: two;
-				}
-			}
+		// 		@media (max-width: $xsmall) {
+		// 			grid-area: two;
+		// 		}
+		// 	}
 
-			.police {
-				grid-area: six;
-				cursor: pointer;
-			}
-		}
+		// 	.police {
+		// 		grid-area: six;
+		// 		cursor: pointer;
+		// 	}
+		// }
 	}
 
 	.cookiesModal.active,

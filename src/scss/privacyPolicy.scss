@@ -1,11 +1,9 @@
-$font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
-
 .politicWrapper {
 	max-width: 820px;
 	margin: 0 auto;
 	padding-top: 40px;
 	line-height: 165%;
-	font-family: e-Ukraine, $font-stack;
+	font-family: e-Ukraine;
 
 	@media (max-width: $media) {
 		padding-left: 24px;

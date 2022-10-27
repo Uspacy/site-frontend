@@ -1,10 +1,8 @@
-$font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
-
 .wrapper404 {
 	margin: 0 auto;
 	padding-top: 40px;
 	line-height: 165%;
-	font-family: e-Ukraine, $font-stack;
+	font-family: e-Ukraine;
 	height: 100vh;
 	width: 100%;
 	display: flex;
@@ -146,28 +144,33 @@ $font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
 			}
 
 			.checkBox label::before {
-				content: '\2713';
-				font-size: 18px;
+				content: '';
+				background: url('../img/notCheckedBalckIcon.png') no-repeat center;
+				// content: '\2713';
+				// font-size: 18px;
 				text-align: center;
-				color: white;
+				// color: white;
 				display: block;
-				width: 1.8em;
-				height: 1em;
+				box-sizing: border-box;
+				padding: 2px;
+				width: 30px;
+				height: 22px;
 				margin-right: 11px;
-				border: 2px solid $color-grey;
-				border-radius: 4px;
-				line-height: 90%;
+				// border: 2px solid $color-grey;
+				// border-radius: 4px;
+				// line-height: 90%;
 
-				@media (max-width: $small) {
-					width: 1em;
-				}
-				@media (max-width: $xsmall) {
-					width: 1.6em;
-				}
+				// @media (max-width: $small) {
+				// 	width: 1em;
+				// }
+				// @media (max-width: $xsmall) {
+				// 	width: 1.6em;
+				// }
 			}
 
 			#consent:checked ~ label::before {
-				color: $color-black;
+				// color: $color-black;
+				background: url('../img/checkedBlackIcon.png') no-repeat center;
 			}
 
 			.label {
