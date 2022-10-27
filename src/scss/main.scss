@@ -7,12 +7,17 @@
 		grid-template-areas:
 			'left right'
 			'bottomLeft  bottomRight';
-		grid-column-gap: 42px;
+		grid-column-gap: 22px;
+
 		@include fw400;
 
 		font-weight: 400;
 		font-size: 14px;
 		line-height: 165%;
+
+		@media (max-width: 800px) {
+			grid-column-gap: 0;
+		}
 
 		@media screen and (max-width: $small) {
 			grid-template-columns: 1fr;
@@ -25,8 +30,13 @@
 
 	.textOne {
 		grid-area: left;
+		width: 377px;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 165%;
 
 		@media (max-width: $small) {
+			width: 262px;
 			font-size: 12px;
 		}
 
@@ -43,6 +53,7 @@
 
 	.textTwo {
 		grid-area: bottomRight;
+		width: 397px;
 		font-weight: 500;
 		font-size: 22px;
 		line-height: 150%;
@@ -53,21 +64,24 @@
 			top: -20px;
 		}
 
-		@media (max-width: $small) {
+		@media (max-width: 840px) {
+			width: 272px;
+			font-weight: 700;
 			font-size: 16px;
-			line-height: 24px;
+			line-height: 150%;
 		}
 	}
 
 	.infoBlockWrapper {
 		position: relative;
 		overflow-x: hidden;
+		width: 100%;
 	}
 
 	.runStrBlock {
 		position: absolute;
 		top: 135px;
-		width: 110%;
+		width: 100%;
 		height: 33px;
 		transform: rotate(-1.3deg);
 		background: $color-white;
@@ -85,8 +99,8 @@
 			color: $color-black;
 			text-transform: uppercase;
 			padding-top: 9px;
-			// animation: strRun 15s infinite linear;
 			white-space: nowrap;
+			// animation: strRun 15s infinite linear;
 		}
 
 		.blueCircle {
@@ -136,12 +150,12 @@
 		}
 
 		.text {
-			max-width: 384px;
+			width: 384px;
 			font-weight: 400;
 			font-size: 14px;
 			line-height: 160%;
 
-			@media (max-width: $media) {
+			@media (max-width: $small) {
 				width: 272px;
 				margin-bottom: 30px;
 			}
@@ -518,10 +532,12 @@
 					display: inline-block;
 					font-size: 12px;
 					line-height: 165%;
+					width: 294px;
 
 					@media (max-width: $small) {
 						font-size: 10px;
 						line-height: 150%;
+						width: 234px;
 					}
 				}
 			}
@@ -577,10 +593,11 @@
 			font-weight: 700;
 			font-size: 14px;
 			line-height: 165%;
+			width: 375px;
 		}
 
 		.text {
-			max-width: 384px;
+			width: 350px;
 			font-weight: 400;
 			font-size: 14px;
 			line-height: 165%;
@@ -600,7 +617,7 @@
 
 			h4 {
 				font-size: 16px;
-				width: 272px;
+				width: 282px;
 			}
 
 			.text {

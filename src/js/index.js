@@ -2,6 +2,7 @@ const MAX_INDEX = 5;
 const emailPattern = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
 function main() {
+	// this will need for foreign site
 	// cookies modal
 	// const cookiesModal = document.querySelector('.jsCookiesModal');
 	// const closeCookiesModalButton = document.querySelector('.js-cookies-modal-close');
@@ -170,7 +171,6 @@ function main() {
 	modalConsent?.addEventListener('change', changeCheckboxModalEmail);
 
 	// form
-
 	email?.addEventListener('focusout', () => {
 		if (emailPattern.test(email?.value)) {
 			email?.classList.add('blurSucces');
