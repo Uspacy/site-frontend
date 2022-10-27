@@ -170,7 +170,6 @@ function main() {
 	modalConsent?.addEventListener('change', changeCheckboxModalEmail);
 
 	// form
-
 	email?.addEventListener('focusout', () => {
 		if (emailPattern.test(email?.value)) {
 			email?.classList.add('blurSucces');
