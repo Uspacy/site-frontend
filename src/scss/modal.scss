@@ -34,10 +34,22 @@
 
 		flex-direction: column;
 
+		@media (max-height: 400px) {
+			min-height: auto;
+		}
+
 		@media (max-width: $xsmall) {
 			min-height: 92vh;
 			width: 100vw;
 			border-radius: 0;
+		}
+
+		@media (max-height: 400px) {
+			min-height: auto;
+
+			.backWrapper {
+				display: none;
+			}
 		}
 	}
 
@@ -79,7 +91,7 @@
 		max-width: 90%;
 		min-height: 630px;
 
-		@media (max-width: $xsmall) {
+		@media (max-height: 630px) {
 			min-height: 85vh;
 		}
 	}
