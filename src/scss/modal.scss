@@ -21,7 +21,7 @@
 	.modalWindow {
 		color: $color-white;
 		width: 484px;
-		min-height: 490px;
+		min-height: 480px;
 		background-color: $color-magenta;
 		border-radius: 16px;
 		padding: 54px 64px;
@@ -45,11 +45,12 @@
 		}
 
 		@media (max-height: 700px) {
-			// min-height: 92vh;
-			padding: 14px 64px;
+			padding: 20px 64px;
 		}
 
-		@media (max-height: 700px) {
+		@media (max-height: 630px) {
+			padding: 14px 64px;
+
 			.backWrapper {
 				display: none;
 			}
@@ -145,8 +146,8 @@
 		.rightBlock {
 			margin-top: 30px;
 
-			@media (max-height: 600px) {
-				margin-top: 15px;
+			@media (max-height: 630px) {
+				margin-top: 0;
 			}
 
 			.modalForm {
