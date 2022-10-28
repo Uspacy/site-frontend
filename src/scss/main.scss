@@ -509,7 +509,7 @@
 
 			.checkBox label::before {
 				content: '';
-				background: url('../img/notCheckedBalckIcon.png') no-repeat center;
+				background: url('../img/checkboxes/checkboxGreyNormal.svg') no-repeat center;
 				text-align: center;
 				display: block;
 				box-sizing: border-box;
@@ -520,7 +520,11 @@
 			}
 
 			#consent:checked ~ label::before {
-				background: url('../img/checkedBlackIcon.png') no-repeat center;
+				background: url('../img/checkboxes/checkboxGreyChecked.svg') no-repeat center;
+			}
+
+			#consent:not(:checked):hover ~ label::before {
+				background: url('../img/checkboxes/checkboxGreyHover.svg') no-repeat center;
 			}
 
 			.label {

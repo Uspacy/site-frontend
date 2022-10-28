@@ -228,7 +228,7 @@
 
 			.checkBox label::before {
 				content: '';
-				background: url('../img/notCheckedWhiteIcon.png') no-repeat center;
+				background: url('../img/checkboxes/checkboxWhiteNormal.svg') no-repeat center;
 				text-align: center;
 				display: block;
 				padding: 2px;
@@ -240,7 +240,11 @@
 			}
 
 			#modal-consent:checked ~ label::before {
-				background: url('../img/checkedWhiteIcon.png') no-repeat center;
+				background: url('../img/checkboxes/checkboxWhiteChecked.svg') no-repeat center;
+			}
+
+			#modal-consent:not(:checked):hover ~ label::before {
+				background: url('../img/checkboxes/checkboxWhiteHover.svg') no-repeat center;
 			}
 
 			.label {
