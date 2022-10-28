@@ -22,6 +22,7 @@ function main() {
 	const modalButtons = document.querySelectorAll('.jsOpenModal');
 	const closeButton = document.querySelector('.jsModalClose');
 	const backButton = document.querySelector('.jsModalBack');
+	const closeWord = document.querySelector('.jsCloseWord');
 	const modalElem = document.querySelector('.jsModal');
 	const overlay = modalElem?.querySelector('.jsOverlay');
 
@@ -32,6 +33,8 @@ function main() {
 		if (firstKnow && modalSuccess) {
 			firstKnow.classList.toggle('unvisible');
 			modalSuccess.classList.toggle('unvisible');
+			closeWord?.classList?.remove('unvisible');
+			backButton.classList.add('unvisible');
 		}
 	}
 
@@ -58,6 +61,7 @@ function main() {
 	closeButton?.addEventListener('click', closeModal);
 	overlay?.addEventListener('click', closeModal);
 	backButton?.addEventListener('click', closeModal);
+	closeWord?.addEventListener('click', closeModal);
 
 	document.body.addEventListener(
 		'keyup',
