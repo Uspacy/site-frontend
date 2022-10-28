@@ -59,9 +59,26 @@
 		line-height: 150%;
 		color: $color-magenta;
 
+		.dash24 {
+			transform: translateY(-4px);
+		}
+
+		.dash40 {
+			transform: translateY(-5px);
+			display: none;
+		}
+
 		@media screen and (min-width: $small) {
 			position: relative;
 			top: -20px;
+
+			.dash24 {
+				display: none;
+			}
+
+			.dash40 {
+				display: initial;
+			}
 		}
 
 		@media (max-width: 840px) {
@@ -658,6 +675,7 @@
 			}
 
 			@media (max-width: $small) {
+				box-sizing: border-box;
 				width: 272px;
 				height: 54px;
 				font-size: 12px;

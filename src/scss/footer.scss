@@ -47,8 +47,11 @@ footer {
 }
 
 .footerLinks {
+	font-size: 12px;
+
 	@media (max-width: $xsmall) {
 		position: relative;
+		font-size: 10px;
 	}
 
 	@media (max-width: 480px) {
