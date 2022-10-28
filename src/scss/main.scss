@@ -163,7 +163,11 @@
 			}
 
 			@media (max-width: $width440) {
-				width: 86%;
+				width: 80%;
+			}
+
+			@media (max-width: 330px) {
+				transform: translateX(-3px);
 			}
 		}
 
@@ -639,7 +643,11 @@
 			}
 
 			@media (max-width: $width440) {
-				width: 86%;
+				width: 80%;
+			}
+
+			@media (max-width: 330px) {
+				transform: translateX(-3px);
 			}
 		}
 
