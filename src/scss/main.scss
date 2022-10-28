@@ -149,6 +149,10 @@
 			background-position: center;
 		}
 
+		@media (max-width: 400px) {
+			width: 84%;
+		}
+
 		.text {
 			width: 384px;
 			font-weight: 400;
@@ -608,7 +612,7 @@
 		}
 
 		@media (max-width: $small) {
-			width: 88%;
+			width: 90%;
 			padding-left: 24px;
 			padding-right: 24px;
 			min-height: 705px;
@@ -628,6 +632,10 @@
 				font-size: 12px;
 				width: 272px;
 			}
+		}
+
+		@media (max-width: 400px) {
+			width: 84%;
 		}
 
 		.partnerProgramm {
