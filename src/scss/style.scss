@@ -24,6 +24,10 @@ $font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
 	src: url('../fonts/e-Ukraine/e-Ukraine-Regular.ttf');
 }
 
+html {
+	overflow-x: hidden;
+}
+
 body {
 	font-family: e-Ukraine, $font-stack;
 	color: $color-black;

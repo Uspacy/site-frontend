@@ -166,7 +166,7 @@
 			background-position: center;
 		}
 
-		@media (max-width: 400px) {
+		@media (max-width: $width440) {
 			width: 84%;
 		}
 
@@ -562,7 +562,7 @@
 					@media (max-width: $small) {
 						font-size: 10px;
 						line-height: 150%;
-						width: 234px;
+						width: 250px;
 					}
 				}
 			}
@@ -651,7 +651,7 @@
 			}
 		}
 
-		@media (max-width: 400px) {
+		@media (max-width: $width440) {
 			width: 84%;
 		}
 
