@@ -84,14 +84,34 @@
 		.leftBlock {
 			width: 47%;
 
-			@media (max-width: $small) {
-				width: 272px;
+			p {
+				margin-top: 24px;
+				margin-bottom: 28px;
+				width: 356px;
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 165%;
 			}
 
 			.h2 {
 				font-weight: 700;
 				font-size: 24px;
 				line-height: 150%;
+			}
+
+			@media (max-width: $small) {
+				width: 100%;
+
+				.h2 {
+					font-size: 16px;
+					width: 264px;
+				}
+
+				p {
+					font-size: 12px;
+					width: 271px;
+					line-height: 160%;
+				}
 			}
 		}
 
@@ -100,6 +120,7 @@
 
 			@media (max-width: $small) {
 				width: 100%;
+				transform: translateX(-25px);
 			}
 
 			.form {

@@ -17,6 +17,11 @@
 	}
 
 	@media (max-width: $xsmall) {
+		background-image: url('../img/bgMobile1000x1800.png');
+		background-position-y: bottom;
+	}
+
+	@media (max-width: 400px) {
 		background-image: url('../img/uspacy_mobl_bg1.png');
 		background-position-y: bottom;
 	}
@@ -100,6 +105,10 @@
 			@media (max-width: $small) {
 				font-size: 30px;
 				width: 265px;
+			}
+
+			@media (max-width: $small) {
+				padding-top: 300px;
 			}
 
 			@media (max-width: 400px) {
