@@ -567,12 +567,13 @@
 				display: flex;
 				justify-content: space-between;
 				cursor: pointer;
+				transform: translateX(-10px);
 
 				span {
 					display: inline-block;
 					font-size: 12px;
 					line-height: 165%;
-					width: 294px;
+					width: 295px;
 
 					@media (max-width: $small) {
 						font-size: 10px;
