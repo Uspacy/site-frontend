@@ -21,7 +21,7 @@
 	.modalWindow {
 		color: $color-white;
 		width: 484px;
-		min-height: 500px;
+		min-height: 490px;
 		background-color: $color-magenta;
 		border-radius: 16px;
 		padding: 54px 64px;
@@ -34,11 +34,6 @@
 
 		flex-direction: column;
 
-		@media (max-height: 500px) {
-			min-height: 92vh;
-			padding: 14px 64px;
-		}
-
 		@media (max-width: $small) {
 			width: 430px;
 		}
@@ -49,9 +44,12 @@
 			border-radius: 0;
 		}
 
-		@media (max-height: 600px) {
-			min-height: auto;
+		@media (max-height: 700px) {
+			// min-height: 92vh;
+			padding: 14px 64px;
+		}
 
+		@media (max-height: 700px) {
 			.backWrapper {
 				display: none;
 			}
@@ -88,7 +86,7 @@
 			position: static;
 		}
 
-		@media (max-height: 600px) {
+		@media (max-height: 700px) {
 			top: 50px;
 		}
 	}
@@ -147,7 +145,7 @@
 		.rightBlock {
 			margin-top: 30px;
 
-			@media (max-height: 500px) {
+			@media (max-height: 600px) {
 				margin-top: 15px;
 			}
 
