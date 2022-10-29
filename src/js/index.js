@@ -78,7 +78,7 @@ function main() {
 
 	// menu
 	const menuLinks = document.querySelectorAll('.jsMenuLink');
-	const menuContentItems = document.querySelectorAll('.jsMenuContent');
+	const menuContentItems = document.querySelectorAll('.jsMenuContentItem');
 	const leftArrow = document.querySelector('.jsLeftArrow');
 	const rightArrow = document.querySelector('.jsRightArrow');
 	const digit = document.querySelector('.jsDigit');
@@ -146,6 +146,63 @@ function main() {
 
 	leftArrow?.addEventListener('click', clickLeftArrow);
 	rightArrow?.addEventListener('click', clickRigthArrow);
+
+	// touch move
+	const menuContent = document.querySelector('.menuContent');
+	let xStart = null;
+
+	function swipeRigth() {
+		if (rightArrow.classList.contains('jsDisable')) return;
+		let activeIndex = null;
+		menuContentItems?.forEach((elem, index) => {
+			if (elem?.classList.contains('active') && index < MAX_INDEX) {
+				activeIndex = index + 1;
+				elem.classList.remove('active');
+				menuLinks?.[index].classList.remove('active');
+				if (index === MAX_INDEX - 1) rightArrow.classList.add('jsDisable');
+				if (index === 0) leftArrow.classList.remove('jsDisable');
+			}
+		});
+		if (activeIndex) {
+			menuContentItems?.[activeIndex].classList.add('active');
+			menuLinks?.[activeIndex].classList.add('active');
+			digit.innerHTML = activeIndex + 1;
+		}
+	}
+
+	function swipeLeft() {
+		if (leftArrow.classList.contains('jsDisable')) return;
+		menuContentItems?.forEach((elem, index) => {
+			if (elem?.classList.contains('active') && index > 0) {
+				digit.innerHTML = index;
+				elem.classList.remove('active');
+				menuContentItems?.[index - 1].classList.add('active');
+				menuLinks?.[index].classList.remove('active');
+				menuLinks?.[index - 1].classList.add('active');
+				if (index === 1) leftArrow.classList.add('jsDisable');
+				if (index === MAX_INDEX) rightArrow.classList.remove('jsDisable');
+			}
+		});
+	}
+
+	function touchStartHandler(event) {
+		const firstTouch = event.touches[0];
+		xStart = firstTouch.clientX;
+	}
+
+	function touchEndHandler(event) {
+		const xEnd = event.changedTouches[0].clientX;
+		if (xStart < xEnd) {
+			swipeRigth();
+		}
+		if (xStart > xEnd) {
+			swipeLeft();
+		}
+		xStart = null;
+	}
+
+	menuContent.addEventListener('touchstart', touchStartHandler);
+	menuContent.addEventListener('touchend', touchEndHandler);
 
 	// checkbox
 	const consent = document.querySelector('#consent');
