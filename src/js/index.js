@@ -193,10 +193,10 @@ function main() {
 	function touchEndHandler(event) {
 		const xEnd = event.changedTouches[0].clientX;
 		if (xStart < xEnd) {
-			swipeRigth();
+			swipeLeft();
 		}
 		if (xStart > xEnd) {
-			swipeLeft();
+			swipeRigth();
 		}
 		xStart = null;
 	}
