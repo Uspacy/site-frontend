@@ -40,12 +40,20 @@ function main() {
 
 	function openModal(event) {
 		event.preventDefault();
+		if (modalEmail?.value) {
+			modalEmail.value = ' ' + modalEmail.value;
+			modalEmail.value = modalEmail.value.trim();
+		}
+
 		if (firstKnow && modalSuccess) {
 			firstKnow.classList.remove('unvisible');
 			modalSuccess.classList.add('unvisible');
 		}
+
 		modalElem?.classList.add('active');
 		overlay?.classList.add('active');
+		closeWord?.classList?.add('unvisible');
+		backButton.classList.remove('unvisible');
 	}
 	function closeModal(e) {
 		e.preventDefault();

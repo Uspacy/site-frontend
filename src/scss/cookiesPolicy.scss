@@ -29,6 +29,11 @@
 			}
 		}
 
+		& li > span {
+			display: block;
+			padding-left: 12px;
+		}
+
 		& li:not(:last-child) {
 			margin-bottom: 8px;
 		}
