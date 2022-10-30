@@ -98,7 +98,7 @@
 	.runStrBlock {
 		position: absolute;
 		top: 135px;
-		width: 100%;
+		width: 130%;
 		height: 33px;
 		transform: rotate(-1.3deg);
 		background: $color-white;
@@ -117,7 +117,7 @@
 			text-transform: uppercase;
 			padding-top: 9px;
 			white-space: nowrap;
-			// animation: strRun 15s infinite linear;
+			animation: str-run 28s infinite linear;
 		}
 
 		.blueCircle {
@@ -131,15 +131,15 @@
 			bottom: 2px;
 		}
 
-		// @keyframes strRun {
-		// 	0% {
-		// 		transform: translate(0, 0);
-		// 	}
+		@keyframes str-run {
+			0% {
+				transform: translate(0, 0);
+			}
 
-		// 	100% {
-		// 		transform: translate(-110%, 0);
-		// 	}
-		// }
+			100% {
+				transform: translate(-130%, 0);
+			}
+		}
 	}
 
 	.infoBlock {
