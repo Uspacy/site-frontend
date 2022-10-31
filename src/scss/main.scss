@@ -299,11 +299,10 @@
 			}
 
 			.leftArrow {
-				display: inline-block;
-				transform: rotate(180deg);
+				padding: 12px 12px 12px 0;
+				cursor: pointer;
 			}
 
-			.leftArrow,
 			.rightArrow {
 				padding: 12px 0 12px 12px;
 				cursor: pointer;
