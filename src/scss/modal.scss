@@ -93,7 +93,7 @@
 		justify-content: center;
 		align-items: center;
 		max-width: 90%;
-		min-height: 630px;
+		height: 90vh;
 
 		@media (max-height: 630px) {
 			min-height: 85vh;
@@ -318,6 +318,10 @@
 			@media (max-width: $small) {
 				font-size: 16px;
 			}
+		}
+
+		.successIcon {
+			font-size: 24px;
 		}
 
 		.successText {
