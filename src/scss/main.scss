@@ -117,7 +117,11 @@
 			text-transform: uppercase;
 			padding-top: 9px;
 			white-space: nowrap;
-			animation: str-run 28s infinite linear;
+			animation: str-run 43s infinite linear;
+
+			@media (max-width: $small) {
+				animation: str-run 28s infinite linear;
+			}
 		}
 
 		.blueCircle {
