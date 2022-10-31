@@ -19,7 +19,7 @@
 			grid-column-gap: 0;
 		}
 
-		@media screen and (max-width: $small) {
+		@media screen and (max-width: $xsmall) {
 			grid-template-columns: 1fr;
 			grid-template-areas:
 				'left left'
@@ -160,7 +160,7 @@
 			align-items: center;
 			color: $color-white;
 
-			@media (max-width: $small) {
+			@media (max-width: $msmall) {
 				flex-direction: column;
 				justify-content: flex-end;
 				align-items: center;
@@ -305,7 +305,7 @@
 
 			.leftArrow,
 			.rightArrow {
-				padding: 12px;
+				padding: 12px 0 12px 12px;
 				cursor: pointer;
 			}
 
@@ -343,6 +343,7 @@
 		transition: opacity 0.6s ease-in-out;
 
 		@media (max-width: $small) {
+			width: 96%;
 			justify-content: flex-start;
 			min-height: 330px;
 		}
@@ -603,6 +604,10 @@
 				display: flex;
 				flex-direction: column;
 				align-items: center;
+
+				.successIcon {
+					font-size: 24px;
+				}
 			}
 
 			.successWindow.unvisible {
@@ -648,7 +653,7 @@
 			line-height: 165%;
 			color: $color-white;
 
-			@media (max-width: $small) {
+			@media (max-width: $msmall) {
 				flex-direction: column;
 				justify-content: flex-end;
 				align-items: center;
@@ -737,6 +742,7 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
+				margin-left: 30px;
 
 				a.link {
 					display: flex;
@@ -757,6 +763,10 @@
 				svg {
 					display: none;
 				}
+			}
+
+			@media (max-width: $msmall) {
+				margin-left: 0;
 			}
 		}
 	}

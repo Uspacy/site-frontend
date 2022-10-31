@@ -13,7 +13,6 @@
 
 	@media (min-width: 1900px) {
 		background-position-y: bottom;
-		min-height: 1280px;
 	}
 
 	@media (max-width: $xsmall) {
@@ -107,7 +106,7 @@
 				width: 265px;
 			}
 
-			@media (max-width: $small) {
+			@media (max-width: $xsmall) {
 				padding-top: 300px;
 			}
 
