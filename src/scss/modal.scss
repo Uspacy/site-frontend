@@ -21,7 +21,6 @@
 	.modalWindow {
 		color: $color-white;
 		width: 484px;
-		min-height: 480px;
 		background-color: $color-magenta;
 		border-radius: 16px;
 		padding: 54px 64px;
@@ -39,7 +38,7 @@
 		}
 
 		@media (max-width: $xsmall) {
-			min-height: 92vh;
+			// min-height: 92vh;
 			width: 100vw;
 			border-radius: 0;
 		}
@@ -93,10 +92,14 @@
 		justify-content: center;
 		align-items: center;
 		max-width: 90%;
-		height: 90vh;
+		height: 550px;
 
 		@media (max-height: 630px) {
-			min-height: 85vh;
+			height: 88vh;
+		}
+
+		@media (max-width: $xsmall) {
+			height: 88vh;
 		}
 	}
 
