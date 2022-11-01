@@ -4,7 +4,7 @@
 	font-family: e-Ukraine;
 	width: 100%;
 	padding-top: 37px;
-	background-image: url('../img/main_background.png');
+	background-image: url('../img/bgJpg/main_background.jpg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position-y: center;
@@ -16,12 +16,12 @@
 	}
 
 	@media (max-width: $xsmall) {
-		background-image: url('../img/bgMobile1000x1800.png');
+		background-image: url('../img/bgJpg/bgMobile1000x1800.jpg');
 		background-position-y: bottom;
 	}
 
 	@media (max-width: 400px) {
-		background-image: url('../img/uspacy_mobl_bg1.png');
+		background-image: url('../img/bgJpg/uspacy_mobl_bg1.jpg');
 		background-position-y: bottom;
 	}
 

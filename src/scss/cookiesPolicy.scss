@@ -32,6 +32,7 @@
 		& li > span {
 			display: block;
 			padding-left: 12px;
+			overflow-wrap: break-word;
 		}
 
 		& li:not(:last-child) {
