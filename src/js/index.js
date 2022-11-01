@@ -158,6 +158,7 @@ function main() {
 	// touch move
 	const menuContent = document.querySelector('.menuContent');
 	let xStart = null;
+	let yStart = null;
 
 	function swipeRigth() {
 		if (rightArrow.classList.contains('jsDisable')) return;
@@ -196,19 +197,27 @@ function main() {
 	function touchStartHandler(event) {
 		const firstTouch = event.touches[0];
 		xStart = firstTouch.clientX;
+		yStart = firstTouch.clientY;
 	}
 
 	function touchEndHandler(event) {
 		const xEnd = event.changedTouches[0].clientX;
-		if (xStart < xEnd) {
-			swipeLeft();
+		const yEnd = event.changedTouches[0].clientY;
+
+		const xDiff = xEnd - xStart;
+		const yDiff = yEnd - yStart;
+
+		if (Math.abs(xDiff) > Math.abs(yDiff)) {
+			if (xStart < xEnd) {
+				swipeLeft();
+			}
+			if (xStart > xEnd) {
+				swipeRigth();
+			}
 		}
-		if (xStart > xEnd) {
-			swipeRigth();
-		}
+
 		xStart = null;
 	}
-
 	menuContent?.addEventListener('touchstart', touchStartHandler);
 	menuContent?.addEventListener('touchend', touchEndHandler);
 
