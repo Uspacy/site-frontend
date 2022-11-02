@@ -72,6 +72,11 @@
 	.bold {
 		font-weight: 700;
 	}
+
+	.mailLink {
+		text-decoration: underline;
+		color: $color-black;
+	}
 }
 
 .politicWrapper ~ footer {
