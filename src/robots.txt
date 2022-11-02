@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+Allow: *.css
+Allow: *.js
+Disallow: /img
+Disallow: /php
+Disallow: /sass
+Host: uspacy.com.ua
+Sitemap: https://uspacy.com.ua/sitemap.xml
