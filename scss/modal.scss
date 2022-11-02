@@ -1,0 +1,348 @@
+.modal {
+	width: 100%;
+	opacity: 0;
+	visibility: hidden;
+	transition: 0.5s all;
+	font-family: e-Ukraine;
+
+	.overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: $color-overlay;
+		z-index: 20;
+		opacity: 0;
+		visibility: hidden;
+		transition: 0.4s all;
+	}
+
+	.modalWindow {
+		color: $color-white;
+		width: 484px;
+		background-color: $color-magenta;
+		border-radius: 16px;
+		padding: 54px 64px;
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		z-index: 30;
+		@include flex;
+
+		flex-direction: column;
+
+		@media (max-width: $small) {
+			width: 430px;
+		}
+
+		@media (max-width: $xsmall) {
+			width: 100vw;
+			border-radius: 0;
+		}
+
+		@media (max-height: 700px) {
+			padding: 20px 64px;
+		}
+
+		@media (max-height: 580px) {
+			padding: 14px 64px;
+		}
+	}
+
+	.logoClose {
+		display: flex;
+		justify-content: flex-end;
+		align-items: center;
+		width: 100%;
+
+		@media (max-width: $xsmall) {
+			justify-content: space-between;
+			max-width: 90%;
+		}
+	}
+
+	.logo {
+		display: none;
+
+		@media (max-width: $xsmall) {
+			display: block;
+		}
+	}
+
+	.close {
+		position: absolute;
+		right: 30px;
+		top: 30px;
+		cursor: pointer;
+
+		@media (max-width: $xsmall) {
+			position: static;
+		}
+
+		@media (max-height: 700px) {
+			top: 50px;
+		}
+	}
+
+	.modalContent {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		max-width: 90%;
+		height: 550px;
+
+		@media (max-height: 630px) {
+			height: 88vh;
+		}
+
+		@media (max-width: $xsmall) {
+			height: 88vh;
+		}
+	}
+
+	.modalFirstKnow {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+
+		.leftBlock {
+			text-align: center;
+			width: 356px;
+
+			.h2 {
+				font-weight: 700;
+				font-size: 24px;
+				line-height: 150%;
+				width: 372px;
+
+				@media (max-width: $xsmall) {
+					font-size: 16px;
+					width: auto;
+				}
+			}
+
+			p {
+				margin: 24px 0;
+				font-size: 14px;
+				font-weight: 400;
+				line-height: 160%;
+
+				@media (max-width: $xsmall) {
+					width: 264px;
+					font-size: 12px;
+				}
+			}
+
+			@media (max-width: $xsmall) {
+				width: 271px;
+			}
+		}
+
+		.rightBlock {
+			margin-top: 30px;
+
+			@media (max-height: 630px) {
+				margin-top: 0;
+			}
+
+			.modalForm {
+				@include flex;
+
+				width: 100%;
+				flex-direction: column-reverse;
+
+				.email,
+				.btnSubmit {
+					width: 310px;
+					height: 64px;
+					border-radius: 50px;
+					border: none;
+					outline: none;
+
+					@media (max-width: 340px) {
+						width: 280px;
+					}
+				}
+
+				.btnSubmit {
+					background: inherit;
+					color: $color-white;
+					border: 2px solid $color-white;
+					margin-top: 12px;
+					font-weight: 500;
+					cursor: pointer;
+				}
+
+				.btnSubmit:disabled {
+					color: $color-grey50;
+				}
+
+				.btnSubmit:hover:not(:disabled) {
+					background: $color-white;
+					color: $color-magenta;
+				}
+
+				.email {
+					background: $color-grey25;
+					text-align: center;
+					font-size: 12px;
+					color: $color-white;
+					box-shadow: 0 0 0 0 $color-grey25 inset; // eslint-disable-line
+				}
+
+				.email:hover {
+					background: $color-grey50;
+				}
+
+				input:-webkit-autofill,
+				input:-webkit-autofill:hover,
+				input:-webkit-autofill:focus,
+				input:-webkit-autofill:active {
+					-webkit-text-fill-color: $color-white !important;
+					color: $color-white !important;
+					box-shadow: 0 0 0 0 $color-grey25 inset !important; // eslint-disable-line
+					transition: background-color 5000s ease-in-out 0s;
+				}
+
+				.email::placeholder {
+					color: $color-white;
+				}
+
+				.emailError {
+					border: 1px solid $color-cian;
+				}
+			}
+
+			.checkBox {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+				margin-top: 30px;
+			}
+
+			#modal-consent {
+				opacity: 0;
+			}
+
+			.checkBox label::before {
+				content: '';
+				background: url('../img/checkboxes/checkboxWhiteNormal.svg') no-repeat center;
+				text-align: center;
+				display: block;
+				padding: 2px;
+				width: 30px;
+				height: 22px;
+				box-sizing: content-box;
+				margin-right: 11px;
+				z-index: 10;
+			}
+
+			#modal-consent:checked ~ label::before {
+				background: url('../img/checkboxes/checkboxWhiteChecked.svg') no-repeat center;
+			}
+
+			#modal-consent:not(:checked):hover ~ label::before {
+				background: url('../img/checkboxes/checkboxWhiteHover.svg') no-repeat center;
+			}
+
+			.label {
+				display: flex;
+				justify-content: space-between;
+				cursor: pointer;
+
+				span {
+					display: inline-block;
+					font-size: 12px;
+					line-height: 165%;
+				}
+			}
+		}
+
+		.privacyPolitikLink {
+			color: $color-white;
+			text-decoration: underline;
+			width: 293px;
+			font-size: 12px;
+
+			@media (max-width: $xsmall) {
+				width: 234px;
+				font-size: 10px;
+			}
+		}
+	}
+
+	.backWrapper {
+		text-align: center;
+		margin-top: 47px;
+		position: absolute;
+		bottom: 50px;
+
+		@media (max-width: $xsmall) {
+			bottom: 70px;
+		}
+
+		@media (max-height: 650px) {
+			bottom: 30px;
+		}
+
+		@media (max-height: 580px) {
+			display: none;
+		}
+	}
+
+	.back {
+		color: $color-white;
+		text-decoration: none;
+		font-size: 12px;
+		padding-bottom: 2px;
+		border-bottom: 1px solid $color-white;
+	}
+
+	.back.unvisible {
+		display: none;
+	}
+
+	.modalSuccess {
+		@include flex;
+
+		flex-direction: column;
+		text-align: center;
+
+		.successHeading {
+			font-weight: 700;
+			font-size: 24px;
+			line-height: 150%;
+			margin: 13px 0 24px;
+
+			@media (max-width: $small) {
+				font-size: 16px;
+			}
+		}
+
+		.successIcon {
+			font-size: 24px;
+		}
+
+		.successText {
+			max-width: 270px;
+
+			@media (max-width: $small) {
+				font-size: 12px;
+			}
+		}
+	}
+
+	.modalFirstKnow.unvisible,
+	.modalSuccess.unvisible {
+		display: none;
+	}
+}
+
+.modal.active,
+.overlay.active {
+	opacity: 1;
+	visibility: visible;
+}

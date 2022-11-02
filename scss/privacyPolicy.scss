@@ -1,0 +1,82 @@
+.politicWrapper {
+	max-width: 820px;
+	margin: 0 auto;
+	padding-top: 40px;
+	line-height: 165%;
+	font-family: e-Ukraine;
+
+	@media (max-width: $media) {
+		padding-left: 24px;
+		padding-right: 24px;
+	}
+
+	@media (max-width: 340px) {
+		padding-left: 14px;
+		padding-right: 14px;
+	}
+
+	.mainContent {
+		& ul {
+			padding-left: 14px;
+		}
+
+		& li {
+			color: $color-magenta;
+			list-style-image: url('../img/blueEllipse.png');
+
+			span {
+				color: $color-black;
+				display: block;
+				padding-left: 12px;
+			}
+		}
+
+		& li:not(:last-child) {
+			margin-bottom: 8px;
+		}
+
+		.mt12 {
+			margin-top: 12px;
+		}
+
+		.politicHeader {
+			@include flex;
+
+			margin-top: 92px;
+			margin-bottom: 43px;
+
+			@media (max-width: $xsmall) {
+				flex-direction: column;
+				margin-bottom: 30px;
+			}
+
+			h2 {
+				font-weight: 700;
+				font-size: 24px;
+				line-height: 150%;
+			}
+
+			div {
+				font-weight: 400;
+				font-size: 12px;
+				line-height: 165%;
+				color: $color-deep-grey;
+			}
+		}
+	}
+
+	.section {
+		margin-top: 36px;
+	}
+
+	.bold {
+		font-weight: 700;
+	}
+}
+
+.politicWrapper ~ footer {
+	.footerLinks div:first-child a {
+		color: $color-deep-grey;
+		text-decoration: none;
+	}
+}

@@ -1,0 +1,310 @@
+@import './var.scss';
+
+.header {
+	font-family: e-Ukraine;
+	width: 100%;
+	padding-top: 37px;
+	background-image: url('../img/bgJpg/main_background.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position-y: center;
+	background-position-x: center;
+	min-height: 980px;
+
+	@media (min-width: 1900px) {
+		background-position-y: bottom;
+	}
+
+	@media (max-width: $xsmall) {
+		background-image: url('../img/bgJpg/bgMobile1000x1800.jpg');
+		background-position-y: bottom;
+	}
+
+	@media (max-width: 400px) {
+		background-image: url('../img/bgJpg/uspacy_mobl_bg1.jpg');
+		background-position-y: bottom;
+	}
+
+	.headerContent {
+		height: 100%;
+		min-height: 980px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
+
+	.logoText {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+
+		@media (max-width: $xsmall) {
+			flex-direction: column;
+			width: 100%;
+		}
+	}
+
+	.logo {
+		padding-right: 66px;
+
+		@media (max-width: $xsmall) {
+			left: 20px;
+			padding-right: 0;
+			width: 100%;
+		}
+	}
+
+	.createText {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 11px;
+		line-height: 120%;
+		color: $color-white;
+
+		span {
+			display: inline-block;
+			width: 173px;
+		}
+
+		@media (max-width: $xsmall) {
+			width: 100%;
+			margin-top: 8px;
+			display: flex;
+			justify-content: flex-end;
+		}
+	}
+
+	.createText span::after {
+		content: '';
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		background-image: url('../img/flag.png');
+		position: relative;
+		top: -26px;
+		right: -75px;
+
+		@media (max-width: $xsmall) {
+			top: -22px;
+		}
+	}
+
+	.effectiveText {
+		color: $color-white;
+		max-width: 400px;
+		width: 100%;
+
+		@media (min-width: 1900px) {
+			padding-bottom: 250px;
+		}
+
+		h2 {
+			font-weight: 700;
+			font-size: 45px;
+			line-height: 110%;
+			width: 400px;
+
+			@media (max-width: $small) {
+				font-size: 30px;
+				width: 265px;
+			}
+
+			@media (max-width: $xsmall) {
+				padding-top: 300px;
+			}
+
+			@media (max-width: 400px) {
+				padding-top: 220px;
+			}
+		}
+
+		.smallerText {
+			margin-top: 15px;
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 130%;
+			width: 334px;
+			@media (max-width: $small) {
+				width: 257px;
+				font-size: 14px;
+
+				span {
+					color: $color-white;
+				}
+			}
+		}
+
+		.btnNotify {
+			@include notifyMe;
+
+			cursor: pointer;
+
+			a {
+				display: flex;
+				width: 100%;
+				height: 100%;
+				align-items: center;
+				justify-content: center;
+			}
+
+			@media (max-width: $small) {
+				width: 272px;
+				height: 54px;
+				font-size: 12px;
+			}
+		}
+
+		.btnNotify:hover {
+			background-color: $color-white;
+		}
+
+		.btnNotify:hover a {
+			color: $color-magenta;
+		}
+	}
+
+	.headerLastText {
+		width: 369px;
+		@include fw400;
+
+		span {
+			font-weight: 700;
+		}
+
+		@media (max-width: $small) {
+			font-size: 12px;
+			width: 276px;
+		}
+	}
+
+	.cookiesModal {
+		opacity: 0;
+		visibility: hidden;
+		transition: 0.5s all;
+
+		.overlay {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: $color-overlay;
+			z-index: 20;
+			opacity: 0;
+			visibility: hidden;
+			transition: 0.4s all;
+		}
+
+		.cookiesModalWindow {
+			color: $color-white;
+			max-width: 620px;
+			width: 80%;
+			min-width: 320px;
+			min-height: 218px;
+			background-color: $color-magenta;
+			padding: 30px 38px;
+			position: fixed;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			z-index: 30;
+			flex-direction: column;
+
+			@media (max-width: $xsmall) {
+				border-radius: 0;
+				width: 90%;
+			}
+		}
+
+		.close {
+			position: absolute;
+			right: 30px;
+			top: 30px;
+			cursor: pointer;
+
+			@media (max-width: $xsmall) {
+				right: 45px;
+			}
+		}
+
+		.useCookies {
+			@media (max-width: $xsmall) {
+				text-align: center;
+			}
+
+			.heading {
+				display: inline-block;
+				font-weight: 700;
+				font-size: 12px;
+				line-height: 150%;
+				margin-left: 20px;
+				transform: translateY(-5px);
+
+				@media (max-width: $xsmall) {
+					display: block;
+					text-align: center;
+					margin-top: 27px;
+				}
+			}
+		}
+
+		.useCookiesText {
+			font-weight: 300;
+			font-size: 12px;
+			line-height: 160%;
+			margin: 20px 0 40px;
+			max-width: 520px;
+
+			@media (max-width: $xsmall) {
+				text-align: center;
+			}
+		}
+
+		// .cookiesModalBtns {
+		// 	display: grid;
+		// 	grid-template-areas:
+		// 		'one two three'
+		// 		'four five six';
+		// 	align-items: center;
+		// 	justify-items: center;
+		// 	row-gap: 20px;
+
+		// 	a {
+		// 		text-decoration: underline;
+		// 		color: $color-white;
+		// 	}
+
+		// 	.reject {
+		// 		grid-area: four;
+		// 		cursor: pointer;
+		// 		text-decoration: underline;
+		// 	}
+
+		// 	.accept {
+		// 		grid-area: five;
+		// 		max-width: 138px;
+		// 		padding: 12px 40px;
+		// 		border: 2px solid $color-white;
+		// 		border-radius: 50px;
+		// 		text-align: center;
+		// 		cursor: pointer;
+
+		// 		@media (max-width: $xsmall) {
+		// 			grid-area: two;
+		// 		}
+		// 	}
+
+		// 	.police {
+		// 		grid-area: six;
+		// 		cursor: pointer;
+		// 	}
+		// }
+	}
+
+	.cookiesModal.active,
+	.overlay.active {
+		opacity: 1;
+		visibility: visible;
+	}
+}

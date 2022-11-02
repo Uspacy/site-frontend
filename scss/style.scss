@@ -1,0 +1,68 @@
+@import './reset.css';
+@import './var.scss';
+@import './header.scss';
+@import './main.scss';
+@import './privacyPolicy.scss';
+@import './cookiesPolicy.scss';
+@import './404.scss';
+@import './modal.scss';
+@import './footer.scss';
+
+$font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
+
+@font-face {
+	font-family: Roboto;
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+	font-family: e-Ukraine;
+	font-style: normal;
+	font-weight: 400;
+	src: url('../fonts/e-Ukraine/e-Ukraine-Regular.ttf');
+}
+
+html {
+	overflow-x: hidden;
+}
+
+body {
+	font-family: e-Ukraine, $font-stack;
+	color: $color-black;
+	font-weight: 400;
+	font-size: 14px;
+	overflow-x: hidden;
+	-ms-overflow-style: none;
+	scrollbar-width: none;
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+}
+
+.wrapper {
+	overflow: hidden;
+	min-height: 100%;
+	font-family: e-Ukraine, $font-stack;
+}
+
+.container {
+	padding: 0 24px;
+	max-width: 836px;
+	margin: 0 auto;
+}
+
+.cian {
+	color: $color-cian;
+}
+
+.magenta {
+	color: $color-magenta;
+}

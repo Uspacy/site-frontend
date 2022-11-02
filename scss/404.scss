@@ -1,0 +1,233 @@
+.wrapper404 {
+	margin: 0 auto;
+	padding-top: 40px;
+	line-height: 165%;
+	font-family: e-Ukraine;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-image: url('../img/bg404.png');
+
+	.logoText {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
+
+	.logo {
+		padding-right: 66px;
+	}
+
+	.createText {
+		font-style: normal;
+		font-weight: 500;
+		font-size: 11px;
+		line-height: 120%;
+		color: $color-black;
+	}
+
+	.createText::after {
+		content: '';
+		display: inline-block;
+		width: 16px;
+		height: 16px;
+		background-image: url('../img/flag.png');
+		position: relative;
+		top: -8px;
+		right: -4px;
+		@media (max-width: 490px) {
+			top: 0;
+		}
+	}
+
+	.content {
+		min-height: 300px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		.digits {
+			font-weight: 500;
+			font-size: 120px;
+			line-height: 120%;
+			color: rgba(255, 255, 255, 0.2);
+		}
+
+		div:last-child {
+			font-weight: 500;
+			font-size: 18px;
+			line-height: 130%;
+			margin-top: 16px;
+			max-width: 545px;
+			text-align: center;
+		}
+	}
+
+	.firstKnow {
+		margin-top: 140px;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+
+		@media (max-width: $small) {
+			flex-direction: column;
+			align-items: center;
+		}
+
+		.leftBlock {
+			width: 47%;
+
+			p {
+				margin-top: 24px;
+				margin-bottom: 28px;
+				width: 356px;
+				font-weight: 400;
+				font-size: 14px;
+				line-height: 165%;
+			}
+
+			.h2 {
+				font-weight: 700;
+				font-size: 24px;
+				line-height: 150%;
+			}
+
+			@media (max-width: $small) {
+				width: 100%;
+
+				.h2 {
+					font-size: 16px;
+					width: 264px;
+				}
+
+				p {
+					font-size: 12px;
+					width: 271px;
+					line-height: 160%;
+				}
+			}
+		}
+
+		.rightBlock {
+			width: 43%;
+
+			@media (max-width: $small) {
+				width: 100%;
+				transform: translateX(-25px);
+			}
+
+			.form {
+				@include flex;
+
+				flex-direction: column-reverse;
+
+				.email,
+				.btnSubmit {
+					width: 310px;
+					height: 64px;
+					border-radius: 100px;
+					border: none;
+					outline: none;
+				}
+
+				.btnSubmit {
+					background: $bg-gradient-cian;
+					color: $color-white;
+					margin-top: 12px;
+					font-weight: 500;
+					font-size: 14px;
+					cursor: pointer;
+
+					@media (max-width: $small) {
+						width: 272px;
+						height: 54px;
+						font-size: 12px;
+					}
+				}
+
+				.btnSubmit:disabled {
+					color: $color-grey50;
+				}
+
+				.btnSubmit:hover:not(:disabled) {
+					background: $bg-gradien-ciant-hover50, $bg-gradien-ciant-hover95;
+				}
+
+				.email {
+					background: $color-grey25;
+					text-align: center;
+					font-size: 12px;
+					font-weight: 400;
+					color: $color-black;
+
+					@media (max-width: $small) {
+						width: 272px;
+						height: 54px;
+					}
+				}
+			}
+
+			.checkBox {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+				margin-top: 17px;
+			}
+
+			#consent {
+				opacity: 0;
+			}
+
+			.checkBox label::before {
+				content: '';
+				background: url('../img/checkboxes/checkboxGreyNormal.svg') no-repeat center;
+				text-align: center;
+				display: block;
+				box-sizing: border-box;
+				padding: 2px;
+				width: 30px;
+				height: 22px;
+				margin-right: 11px;
+			}
+
+			#consent:checked ~ label::before {
+				background: url('../img/checkboxes/checkboxGreyChecked.svg') no-repeat center;
+			}
+
+			#consent:not(:checked):hover ~ label::before {
+				background: url('../img/checkboxes/checkboxGreyHover.svg') no-repeat center;
+			}
+
+			.label {
+				display: flex;
+				justify-content: space-between;
+				cursor: pointer;
+
+				span {
+					display: inline-block;
+					font-size: 12px;
+					line-height: 165%;
+					width: 294px;
+
+					@media (max-width: $small) {
+						font-size: 10px;
+						line-height: 150%;
+						width: 250px;
+					}
+				}
+			}
+		}
+	}
+
+	.privacyPolitikLink {
+		color: $color-black;
+		text-decoration: underline;
+	}
+}
