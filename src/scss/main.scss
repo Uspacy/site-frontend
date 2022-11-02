@@ -51,7 +51,7 @@
 
 			@media (max-width: $small) {
 				display: inline-block;
-				margin-top: 1px;
+				margin-top: 3px;
 			}
 		}
 	}
@@ -545,7 +545,7 @@
 				}
 
 				.emailError {
-					border: 1px solid $color-red;
+					border: 1px solid $color-cian;
 				}
 			}
 
