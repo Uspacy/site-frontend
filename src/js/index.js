@@ -270,6 +270,8 @@ function main() {
 	email?.addEventListener('focusout', () => {
 		if (emailPattern.test(email?.value)) {
 			email?.classList.add('blurSucces');
+		} else {
+			email.classList.add('emailError');
 		}
 	});
 
@@ -293,6 +295,16 @@ function main() {
 			}
 		}),
 	);
+
+	modalEmail?.addEventListener('focusout', () => {
+		if (emailPattern.test(modalEmail?.value)) {
+			modalEmail?.classList.add('blurSucces');
+		} else {
+			modalEmail.classList.add('emailError');
+		}
+	});
+
+	modalEmail?.addEventListener('focus', () => modalEmail?.classList.remove('blurSucces'));
 
 	modalEmail?.addEventListener(
 		'input',
