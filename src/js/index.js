@@ -218,6 +218,7 @@ function main() {
 
 		xStart = null;
 	}
+
 	menuContent?.addEventListener('touchstart', touchStartHandler);
 	menuContent?.addEventListener('touchend', touchEndHandler);
 
@@ -234,6 +235,8 @@ function main() {
 	function changeCheckboxEmail(event) {
 		// eslint-disable-next-line no-invalid-this
 		const btnSubmit = this.parentElement.parentElement.querySelector('.btnSubmit');
+		if (emailPattern.test(email?.value)) email?.classList?.remove('emailError');
+		else email?.classList?.add('emailError');
 		// eslint-disable-next-line no-invalid-this
 		if (btnSubmit) btnSubmit.disabled = !this.checked || !emailPattern.test(email?.value);
 	}
@@ -241,6 +244,8 @@ function main() {
 	function changeCheckboxModalEmail(event) {
 		// eslint-disable-next-line no-invalid-this
 		const btnSubmit = this.parentElement.parentElement.querySelector('.btnSubmit');
+		if (emailPattern.test(modalEmail?.value)) modalEmail?.classList?.remove('emailError');
+		else modalEmail?.classList?.add('emailError');
 		// eslint-disable-next-line no-invalid-this
 		if (btnSubmit) btnSubmit.disabled = !this.checked || !emailPattern.test(modalEmail?.value);
 	}
@@ -249,6 +254,19 @@ function main() {
 	modalConsent?.addEventListener('change', changeCheckboxModalEmail);
 
 	// form
+	const debounce = (fn, delay = 500) => {
+		let timeoutId;
+		return (...args) => {
+			if (timeoutId) {
+				clearTimeout(timeoutId);
+			}
+			timeoutId = setTimeout(() => {
+				// eslint-disable-next-line prefer-spread
+				fn.apply(null, args);
+			}, delay);
+		};
+	};
+
 	email?.addEventListener('focusout', () => {
 		if (emailPattern.test(email?.value)) {
 			email?.classList.add('blurSucces');
@@ -257,19 +275,43 @@ function main() {
 
 	email?.addEventListener('focus', () => email?.classList.remove('blurSucces'));
 
-	email?.addEventListener('input', () => {
-		const btn = form.querySelector('.btnSubmit');
-		if (btn && emailPattern.test(email?.value) && consent.checked) {
-			btn.disabled = false;
-		} else btn.disabled = true;
-	});
+	email?.addEventListener(
+		'input',
+		debounce(() => {
+			const btn = form.querySelector('.btnSubmit');
 
-	modalEmail?.addEventListener('input', () => {
-		const btn = modalForm.querySelector('.btnSubmit');
-		if (btn && emailPattern.test(modalEmail?.value) && modalConsent.checked) {
-			btn.disabled = false;
-		} else btn.disabled = true;
-	});
+			if (emailPattern.test(email?.value)) email.classList.remove('emailError');
+			else email.classList.add('emailError');
+
+			if (consent.checked) consent.classList.remove('error');
+			else consent.classList.add('error');
+
+			if (btn && emailPattern.test(email?.value) && consent.checked) {
+				btn.disabled = false;
+			} else {
+				btn.disabled = true;
+			}
+		}),
+	);
+
+	modalEmail?.addEventListener(
+		'input',
+		debounce(() => {
+			const btn = modalForm.querySelector('.btnSubmit');
+
+			if (emailPattern.test(modalEmail?.value)) modalEmail.classList.remove('emailError');
+			else modalEmail.classList.add('emailError');
+
+			if (modalConsent.checked) modalConsent.classList.remove('error');
+			else modalConsent.classList.add('error');
+
+			if (btn && emailPattern.test(modalEmail?.value) && modalConsent.checked) {
+				btn.disabled = false;
+			} else {
+				btn.disabled = true;
+			}
+		}),
+	);
 
 	function showHideSuccess() {
 		successWindow?.classList.toggle('unvisible');
@@ -292,9 +334,9 @@ function main() {
 				return;
 			}
 
-			const url = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSePNhSya-JPbAQHCN91X95hJRVfaitw8x25yjfQM5Qs_vH47w/formResponse?&submit=Submit';
+			const url = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSfUl5ODYQ5INiI-GysrsoR0tB9t5etaOSCb9VN7xzwxNEno7Q/formResponse?&submit=Submit';
 			const formData = new FormData();
-			formData.append('entry.568783889', emailElement?.value);
+			formData.append('entry.1493797334', emailElement?.value);
 			const response = await fetch(url, {
 				method: 'POST',
 				body: formData,

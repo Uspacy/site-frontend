@@ -248,6 +248,10 @@
 				background: url('../img/checkboxes/checkboxWhiteHover.svg') no-repeat center;
 			}
 
+			#modal-consent.error:not(:checked) ~ label::before {
+				background: url('../img/checkboxes/checkboxCian.svg') no-repeat center;
+			}
+
 			.label {
 				display: flex;
 				justify-content: space-between;
