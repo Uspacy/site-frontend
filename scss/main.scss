@@ -580,6 +580,10 @@
 				background: url('../img/checkboxes/checkboxGreyHover.svg') no-repeat center;
 			}
 
+			#consent.error:not(:checked) ~ .label::before {
+				background: url('../img/checkboxes/checkboxCian.svg') no-repeat center;
+			}
+
 			.label {
 				display: flex;
 				justify-content: space-between;
