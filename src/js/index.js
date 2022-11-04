@@ -59,7 +59,6 @@ function main() {
 		e.preventDefault();
 		modalElem?.classList.remove('active');
 		overlay?.classList.remove('active');
-		if (!modalSuccess.classList.contain('unvisible')) showHideModalSuccess();
 	}
 
 	modalButtons?.forEach(function (item) {
