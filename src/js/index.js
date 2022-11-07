@@ -345,9 +345,9 @@ function main() {
 				return;
 			}
 
-			const url = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSfUl5ODYQ5INiI-GysrsoR0tB9t5etaOSCb9VN7xzwxNEno7Q/formResponse?&submit=Submit';
+			const url = 'https://docs.google.com/forms/u/0/d/e/1FAIpQLSePNhSya-JPbAQHCN91X95hJRVfaitw8x25yjfQM5Qs_vH47w/formResponse?&submit=Submit';
 			const formData = new FormData();
-			formData.append('entry.1493797334', emailElement?.value);
+			formData.append('entry.568783889', emailElement?.value);
 			const response = await fetch(url, {
 				method: 'POST',
 				body: formData,
