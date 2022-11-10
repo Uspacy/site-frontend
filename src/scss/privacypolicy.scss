@@ -5,6 +5,11 @@
 	line-height: 165%;
 	font-family: e-Ukraine;
 
+	.h4 {
+		line-height: 165%;
+		font-weight: 700;
+	}
+
 	@media (max-width: $media) {
 		padding-left: 24px;
 		padding-right: 24px;

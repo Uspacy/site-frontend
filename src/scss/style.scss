@@ -18,10 +18,60 @@ $font-stack: -apple-system, 'Roboto', 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 @font-face {
-	font-family: e-Ukraine;
+	font-family: e-ukraine;
+	src: url('../fonts/e-Ukraine/e-Ukraine-Thin.woff2') format('woff2');
+	font-weight: 100;
 	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: e-ukraine;
+	src: url('../fonts/e-Ukraine/e-Ukraine-UltraLight.woff2') format('woff2');
+	font-weight: 200;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: e-ukraine;
+	src: url('../fonts/e-Ukraine/e-Ukraine-Light.woff2') format('woff2');
+	font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: e-ukraine;
+	src: url('../fonts/e-Ukraine/e-Ukraine-Regular.woff2') format('woff2');
 	font-weight: 400;
-	src: url('../fonts/e-Ukraine/e-Ukraine-Regular.ttf');
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: e-ukraine;
+	src: url('../fonts/e-Ukraine/e-Ukraine-Medium.woff2') format('woff2'), url('../fonts/e-Ukraine/e-Ukraine-Medium.woff') format('woff'),
+		url('../fonts/e-Ukraine/e-Ukraine-Medium.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: e-ukraine;
+	src: url('../fonts/e-Ukraine/e-Ukraine-Medium.woff2') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: e-ukraine;
+	src: url('../fonts/e-Ukraine/e-Ukraine-Bold.woff2') format('woff2');
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
 }
 
 html {
