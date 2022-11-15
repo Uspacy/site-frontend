@@ -345,6 +345,7 @@ function main() {
 				// eslint-disable-next-line no-invalid-this
 				if (this.classList.contains('jsForm')) {
 					showHideSuccess();
+					consent.classList.remove('error');
 					setTimeout(showHideSuccess, 3000);
 				}
 			}
