@@ -341,6 +341,7 @@ function main() {
 				// eslint-disable-next-line no-invalid-this
 				if (this.classList.contains('jsModalForm')) {
 					showHideModalSuccess();
+					modalConsent.classList.remove('error');
 				}
 				// eslint-disable-next-line no-invalid-this
 				if (this.classList.contains('jsForm')) {
