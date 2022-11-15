@@ -148,6 +148,96 @@
 				margin-top: 0;
 			}
 
+			.checkBox {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+				margin-top: 30px;
+			}
+
+			// #modal-consent {
+			// 	opacity: 0;
+			// }
+
+			.containerbox {
+				display: block;
+				position: relative;
+				padding-left: 35px;
+				margin-bottom: 12px;
+				cursor: pointer;
+				// -webkit-user-select: none;
+				// -moz-user-select: none;
+				// -ms-user-select: none;
+				user-select: none;
+				margin-top: 18px;
+			}
+
+			/* Hide the browser's default checkbox */
+			.containerbox input {
+				position: absolute;
+				opacity: 0;
+				cursor: pointer;
+				height: 0;
+				width: 0;
+			}
+
+			/* Create a custom checkbox */
+			.checkmark {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 20px;
+				width: 20px;
+				background-color: none;
+				border: 2px solid $color-white;
+				border-radius: 4px;
+				box-sizing: border-box;
+			}
+
+			/* On mouse-over, add a grey background color */
+			.containerbox:hover input ~ .checkmark {
+				border: 2px solid rgba(207, 209, 232, 0.5);
+				background-color: rgba(207, 209, 232, 0.5);
+			}
+
+			/* Style the checkmark/indicator */
+			.containerbox .checkmark::after {
+				content: '';
+				position: absolute;
+				display: none;
+				left: 4px;
+				top: 1px;
+				width: 5px;
+				height: 9px;
+				border: solid $color-white;
+				border-width: 0 3px 3px 0;
+				// -webkit-transform: rotate(45deg);
+				// -ms-transform: rotate(45deg);
+				transform: rotate(45deg);
+			}
+
+			/* Show the checkmark when checked */
+			.containerbox input:checked ~ .checkmark::after {
+				display: block;
+			}
+
+			.accept {
+				display: inline-block;
+				font-size: 12px;
+				line-height: 165%;
+				width: 295px;
+
+				@media (max-width: $small) {
+					font-size: 10px;
+					line-height: 150%;
+					width: 250px;
+				}
+			}
+
+			#modal-consent.error:not(:checked) ~ .checkmark {
+				border: 2px solid $color-cian;
+			}
+
 			.modalForm {
 				@include flex;
 
@@ -213,54 +303,6 @@
 
 				.emailError {
 					border: 1px solid $color-cian;
-				}
-			}
-
-			.checkBox {
-				display: flex;
-				justify-content: space-between;
-				align-items: flex-start;
-				margin-top: 30px;
-			}
-
-			#modal-consent {
-				opacity: 0;
-			}
-
-			.checkBox label::before {
-				content: '';
-				background: url('../img/checkboxes/checkboxWhiteNormal.svg') no-repeat center;
-				text-align: center;
-				display: block;
-				padding: 2px;
-				width: 30px;
-				height: 22px;
-				box-sizing: content-box;
-				margin-right: 11px;
-				z-index: 10;
-			}
-
-			#modal-consent:checked ~ label::before {
-				background: url('../img/checkboxes/checkboxWhiteChecked.svg') no-repeat center;
-			}
-
-			#modal-consent:not(:checked):hover ~ label::before {
-				background: url('../img/checkboxes/checkboxWhiteHover.svg') no-repeat center;
-			}
-
-			#modal-consent.error:not(:checked) ~ label::before {
-				background: url('../img/checkboxes/checkboxCian.svg') no-repeat center;
-			}
-
-			.label {
-				display: flex;
-				justify-content: space-between;
-				cursor: pointer;
-
-				span {
-					display: inline-block;
-					font-size: 12px;
-					line-height: 165%;
 				}
 			}
 		}

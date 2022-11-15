@@ -105,14 +105,6 @@
 					<a href="#" class="jsMenuLink" data-menu="other">Інші можливості</a>
 					<div class="arrows">
 						<span class="leftArrow jsLeftArrow jsDisable">
-							<!-- <svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path
-									fill-rule="evenodd"
-									clip-rule="evenodd"
-									d="M9.37531 0.219168C9.80657 -0.125842 10.4359 -0.0559202 10.7809 0.375342L14.7809 5.37534C15.073 5.74056 15.073 6.25951 14.7809 6.62473L10.7809 11.6247C10.4359 12.056 9.80657 12.1259 9.37531 11.7809C8.94404 11.4359 8.87412 10.8066 9.21913 10.3753L11.9194 7.00004H1C0.447715 7.00004 0 6.55232 0 6.00004C0 5.44775 0.447715 5.00004 1 5.00004H11.9194L9.21913 1.62473C8.87412 1.19347 8.94404 0.564178 9.37531 0.219168Z"
-									fill="#101010"
-								/>
-							</svg> -->
 							<svg width="15" height="12" viewBox="0 0 15 12" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path
 									fill-rule="evenodd"
@@ -266,16 +258,6 @@
 					</div>
 					<div class="rightBlock">
 						<form class="form jsForm">
-							<!-- <div class="checkBox">
-								<input type="checkbox" id="consent" />
-								<label for="consent" class="label">
-									<span
-										>Даю згоду на обробку персональних даних згідно з
-										<a href="privacypolicy.html" class="privacyPolitikLink">політикою конфіденційності</a>.</span
-									>
-								</label>
-							</div> -->
-							<!-- -------------------------------------------- -->
 							<div class="checkBox">
 								<label class="containerbox"
 									><span class="accept"
@@ -286,8 +268,6 @@
 									<span class="checkmark"></span>
 								</label>
 							</div>
-							<!-- -------------------------------------------- -->
-
 							<button type="submit" class="btnSubmit">Повідомте мене про запуск</button>
 							<input type="text" name="email" placeholder="Email" class="email" />
 						</form>
@@ -415,12 +395,13 @@
 						<div class="rightBlock">
 							<form class="modalForm jsModalForm">
 								<div class="checkBox">
-									<input type="checkbox" id="modal-consent" />
-									<label for="modal-consent" class="label">
-										<span
+									<label class="containerbox"
+										><span class="accept"
 											>Даю згоду на обробку персональних даних згідно з
-											<a href="privacypolicy.html" class="privacyPolitikLink">політикою&nbsp;конфіденційності</a>.</span
+											<a href="privacypolicy.html" class="privacyPolitikLink">політикою конфіденційності.</a></span
 										>
+										<input type="checkbox" name="agree" id="modal-consent" />
+										<span class="checkmark"></span>
 									</label>
 								</div>
 								<button type="submit" class="btnSubmit">Повідомте мене про запуск</button>
