@@ -2,22 +2,6 @@ const MAX_INDEX = 5;
 const emailPattern = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
 function main() {
-	// this will need for foreign site
-	// cookies modal
-	// const cookiesModal = document.querySelector('.jsCookiesModal');
-	// const closeCookiesModalButton = document.querySelector('.js-cookies-modal-close');
-	// const cookiesOverlay = cookiesModal?.querySelector('.js-overlay');
-
-	// function closeCookiesModal(event) {
-	// 	event.preventDefault();
-	// 	cookiesModal?.classList.remove('active');
-	// 	cookiesOverlay?.classList.remove('active');
-	// }
-
-	// closeCookiesModalButton?.addEventListener('click', closeCookiesModal);
-	// cookiesOverlay?.addEventListener('click', closeCookiesModal);
-	// cookiesModal?.querySelector('.js-accept')?.addEventListener('click', closeCookiesModal);
-
 	// modal
 	const modalButtons = document.querySelectorAll('.jsOpenModal');
 	const closeButton = document.querySelector('.jsModalClose');
@@ -233,7 +217,7 @@ function main() {
 
 	function changeCheckboxEmail(event) {
 		// eslint-disable-next-line no-invalid-this
-		const btnSubmit = this.parentElement.parentElement.querySelector('.btnSubmit');
+		const btnSubmit = this.parentElement.parentElement.parentElement.querySelector('.btnSubmit');
 		if (emailPattern.test(email?.value)) email?.classList?.remove('emailError');
 		else email?.classList?.add('emailError');
 		// eslint-disable-next-line no-invalid-this
@@ -242,7 +226,7 @@ function main() {
 
 	function changeCheckboxModalEmail(event) {
 		// eslint-disable-next-line no-invalid-this
-		const btnSubmit = this.parentElement.parentElement.querySelector('.btnSubmit');
+		const btnSubmit = this.parentElement.parentElement.parentElement.querySelector('.btnSubmit');
 		if (emailPattern.test(modalEmail?.value)) modalEmail?.classList?.remove('emailError');
 		else modalEmail?.classList?.add('emailError');
 		// eslint-disable-next-line no-invalid-this
