@@ -361,8 +361,8 @@ function main() {
 		}
 	}
 
-	form?.addEventListener('submit', submit);
-	modalForm?.addEventListener('submit', submit);
+	form?.addEventListener('submit', debounce(submit));
+	modalForm?.addEventListener('submit', debounce(submit));
 }
 
 document.addEventListener('DOMContentLoaded', main);
