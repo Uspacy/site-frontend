@@ -323,6 +323,10 @@ function main() {
 		try {
 			event.preventDefault();
 			// eslint-disable-next-line no-invalid-this
+			const btn = this.querySelector('.btnSubmit');
+			btn.disabled = true;
+			setTimeout(() => (btn.disabled = false), 3000);
+			// eslint-disable-next-line no-invalid-this
 			const emailElement = this.querySelector('.email');
 			if (emailElement?.value.length < 2 || !emailPattern.test(emailElement?.value)) {
 				emailElement.classList.add('emailError');
