@@ -93,6 +93,11 @@
 		position: relative;
 		overflow-x: hidden;
 		width: 100%;
+
+		.unvisibleBlock {
+			position: absolute;
+			opacity: 0;
+		}
 	}
 
 	.runStrBlock {
